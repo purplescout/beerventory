@@ -9,4 +9,10 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   validates :email, presence: true, uniqueness: true
+
+  validates :api_token, presence: true, uniqueness: true
+
+  before_validation do
+    self.api_token = SecureRandom.base64(48) if password.present?
+  end
 end

@@ -38,5 +38,20 @@ describe User do
         expect(user.errors[:password_confirmation]).to eq ["doesn't match Password"]
       end
     end
+
+    describe "#api_token" do
+      it "is set to a random string by default" do
+        user = User.make!
+        expect(user.api_token).to be_present
+      end
+
+      it "is changed when the user changes password" do
+        user = User.make!(password: "test", password_confirmation: "test")
+        old_token = user.api_token
+
+        user.update_attributes(password: "abc", password_confirmation: "abc")
+        expect(user.api_token).not_to eq old_token
+      end
+    end
   end
 end

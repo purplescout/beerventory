@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113184058) do
+ActiveRecord::Schema.define(version: 20150127190642) do
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id"
@@ -43,8 +43,10 @@ ActiveRecord::Schema.define(version: 20150113184058) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
+    t.string   "api_token",                       null: false
   end
 
+  add_index "users", ["api_token"], name: "index_users_on_api_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token"
