@@ -9,6 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var organizationLabel: UILabel!
+  @IBOutlet weak var myStatusLabel: UILabel!
+  @IBOutlet weak var fridgeStatusLabel: UILabel!
+  @IBOutlet weak var allUserStatusLabel: UILabel!
+  @IBOutlet weak var takeOutButtonLabel: UILabel!
+  @IBOutlet weak var insertButtonLabel: UILabel!
+
+  @IBAction func showMyStatus(sender: AnyObject) {
+  }
+
+  @IBAction func showFridgeStatus(sender: AnyObject) {
+  }
+
+  @IBAction func showAllUserStatus(sender: AnyObject) {
+  }
+
+  @IBAction func showTakeOut(sender: AnyObject) {
+  }
+
+  @IBAction func showInsert(sender: AnyObject) {
+  }
+
 
   override func viewDidLoad() {
     super.viewDidLoad()
