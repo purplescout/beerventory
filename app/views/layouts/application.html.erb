@@ -1,14 +1,21 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-  <title>BeerventoryBackend</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Beerventory</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+  <body>
+    <% if flash[:alert] %>
+      <p class="alert"><%=h flash[:alert] %></p>
+    <% end %>
+    <% if flash[:notice] %>
+      <p class="notice"><%=h flash[:notice] %></p>
+    <% end %>
 
-</body>
+    <%= yield %>
+  </body>
 </html>

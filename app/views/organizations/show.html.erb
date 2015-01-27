@@ -1,0 +1,8 @@
+<h1><%= @organization.name %></h1>
+
+<p>
+  Invitation code: <%= @organization.code %>
+</p>
+
+<p><%= link_to "All organizations", organizations_path %></p>
+<p><%= link_to "Leave #{@organization.name}", leave_organization_path(@organization), method: :put %></p>

@@ -1,0 +1,17 @@
+<h1>Organizations</h1>
+
+<% @organizations.each do |organization| %>
+  <%= link_to organization.name, organization %>
+<% end %>
+
+<% if @organizations.empty? %>
+  You are currently not a member of any organization.
+<% end %>
+
+<h2>Join an organization</h2>
+<%= form_tag join_organizations_path, method: :put do %>
+  <%= text_field_tag :code, "", placeholder: "Invitation code" %>
+  <%= submit_tag "Join" %>
+<% end %>
+
+or <%= link_to "create a new organization", new_organization_path %>

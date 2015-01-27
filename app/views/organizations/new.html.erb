@@ -1,0 +1,15 @@
+<h1>New organization</h1>
+
+<%= form_for @organization do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+
+  <%= form.submit "Create" %>
+<% end %>
