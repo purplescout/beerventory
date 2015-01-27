@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20150127190642) do
 
+  create_table "beers", force: :cascade do |t|
+    t.string  "barcode", null: false
+    t.string  "name",    null: false
+    t.decimal "volume"
+  end
+
+  add_index "beers", ["barcode"], name: "index_beers_on_barcode", unique: true
+
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "organization_id"
