@@ -4,6 +4,75 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="ZjG-3O-hQ7">
+            <objects>
+                <viewController storyboardIdentifier="loginViewController" id="aH8-lV-hbN" customClass="LoginViewController" customModule="beerventory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kXd-9F-4GS"/>
+                        <viewControllerLayoutGuide type="bottom" id="9KO-GY-rh7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MgK-4V-rDn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBg.png" translatesAutoresizingMaskIntoConstraints="NO" id="wLq-j1-Hmh">
+                                <rect key="frame" x="159" y="0.0" width="283" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="BLP-em-7yB"/>
+                                    <constraint firstAttribute="width" constant="283" id="vRx-Bq-DnV"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BLP-em-7yB"/>
+                                        <exclude reference="vRx-Bq-DnV"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nG7-4M-Yyc">
+                                <rect key="frame" x="183" y="100" width="190" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sFk-jo-oHR">
+                                <rect key="frame" x="183" y="150" width="190" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHp-BL-Dhx">
+                                <rect key="frame" x="183" y="273" width="190" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="organization" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GYY-Py-paR">
+                                <rect key="frame" x="183" y="323" width="190" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xoq-VZ-RGk">
+                                <rect key="frame" x="183" y="185" width="190" height="21"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="12"/>
+                                <color key="textColor" red="0.090196078431372548" green="0.16470588235294117" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9KO-GY-rh7" firstAttribute="top" secondItem="wLq-j1-Hmh" secondAttribute="bottom" id="66J-SJ-GzT"/>
+                            <constraint firstAttribute="centerX" secondItem="wLq-j1-Hmh" secondAttribute="centerX" id="Ugs-fk-6lh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="nG7-4M-Yyc" id="2zX-g9-NhM"/>
+                        <outlet property="invitationCodeTextField" destination="GYY-Py-paR" id="koR-nt-and"/>
+                        <outlet property="nameTextField" destination="yHp-BL-Dhx" id="joh-YJ-eu8"/>
+                        <outlet property="passwordTextField" destination="sFk-jo-oHR" id="Bq8-IG-EX2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dks-4B-hee" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195" y="-290"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -259,6 +328,7 @@
         <image name="allUserStatusButtonBg.png" width="203" height="230"/>
         <image name="fridgeStatusButtonBg.png" width="208" height="201"/>
         <image name="insertButtonBg.png" width="293" height="87"/>
+        <image name="loginBg.png" width="283" height="600"/>
         <image name="myStatusButtonBg.png" width="120" height="124"/>
         <image name="takeOutButtonBg.png" width="293" height="87"/>
     </resources>

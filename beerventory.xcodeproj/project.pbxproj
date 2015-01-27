@@ -11,6 +11,9 @@
 		4CB7FF6A1A780D8A002CA3AF /* takeOutButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF661A780D8A002CA3AF /* takeOutButtonBg.png */; };
 		4CB7FF6B1A780D8A002CA3AF /* insertButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF671A780D8A002CA3AF /* insertButtonBg@2x.png */; };
 		4CB7FF6C1A780D8A002CA3AF /* takeOutButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF681A780D8A002CA3AF /* takeOutButtonBg@2x.png */; };
+		4CB7FF731A782032002CA3AF /* loginBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF711A782032002CA3AF /* loginBg.png */; };
+		4CB7FF741A782032002CA3AF /* loginBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF721A782032002CA3AF /* loginBg@2x.png */; };
+		4CB7FF761A7823BA002CA3AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7FF751A7823BA002CA3AF /* LoginViewController.swift */; };
 		4CBAE78A1A703A8000F3DC8E /* myStatusButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAE7881A703A8000F3DC8E /* myStatusButtonBg.png */; };
 		4CBAE78B1A703A8000F3DC8E /* myStatusButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAE7891A703A8000F3DC8E /* myStatusButtonBg@2x.png */; };
 		4CBAE7901A703B6E00F3DC8E /* allUserStatusButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAE78C1A703B6E00F3DC8E /* allUserStatusButtonBg.png */; };
@@ -41,6 +44,9 @@
 		4CB7FF661A780D8A002CA3AF /* takeOutButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takeOutButtonBg.png; sourceTree = "<group>"; };
 		4CB7FF671A780D8A002CA3AF /* insertButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "insertButtonBg@2x.png"; sourceTree = "<group>"; };
 		4CB7FF681A780D8A002CA3AF /* takeOutButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "takeOutButtonBg@2x.png"; sourceTree = "<group>"; };
+		4CB7FF711A782032002CA3AF /* loginBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBg.png; sourceTree = "<group>"; };
+		4CB7FF721A782032002CA3AF /* loginBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginBg@2x.png"; sourceTree = "<group>"; };
+		4CB7FF751A7823BA002CA3AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4CBAE7881A703A8000F3DC8E /* myStatusButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myStatusButtonBg.png; sourceTree = "<group>"; };
 		4CBAE7891A703A8000F3DC8E /* myStatusButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myStatusButtonBg@2x.png"; sourceTree = "<group>"; };
 		4CBAE78C1A703B6E00F3DC8E /* allUserStatusButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = allUserStatusButtonBg.png; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 		4CBAE7711A7033FD00F3DC8E /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4CB7FF711A782032002CA3AF /* loginBg.png */,
+				4CB7FF721A782032002CA3AF /* loginBg@2x.png */,
 				4CB7FF651A780D8A002CA3AF /* insertButtonBg.png */,
 				4CB7FF661A780D8A002CA3AF /* takeOutButtonBg.png */,
 				4CB7FF671A780D8A002CA3AF /* insertButtonBg@2x.png */,
@@ -119,6 +127,7 @@
 				4CBAE7711A7033FD00F3DC8E /* images */,
 				4CD3D8C11A6C161900E05669 /* AppDelegate.swift */,
 				4CD3D8C61A6C161900E05669 /* ViewController.swift */,
+				4CB7FF751A7823BA002CA3AF /* LoginViewController.swift */,
 				4CD3D8C81A6C161900E05669 /* Main.storyboard */,
 				4CD3D8CB1A6C161900E05669 /* Images.xcassets */,
 				4CD3D8CD1A6C161900E05669 /* LaunchScreen.xib */,
@@ -239,11 +248,13 @@
 				4CD3D8CA1A6C161900E05669 /* Main.storyboard in Resources */,
 				4CB7FF6C1A780D8A002CA3AF /* takeOutButtonBg@2x.png in Resources */,
 				4CB7FF6A1A780D8A002CA3AF /* takeOutButtonBg.png in Resources */,
+				4CB7FF731A782032002CA3AF /* loginBg.png in Resources */,
 				4CBAE7901A703B6E00F3DC8E /* allUserStatusButtonBg.png in Resources */,
 				4CD3D8CF1A6C161900E05669 /* LaunchScreen.xib in Resources */,
 				4CD3D8CC1A6C161900E05669 /* Images.xcassets in Resources */,
 				4CB7FF6B1A780D8A002CA3AF /* insertButtonBg@2x.png in Resources */,
 				4CBAE7921A703B6E00F3DC8E /* fridgeStatusButtonBg.png in Resources */,
+				4CB7FF741A782032002CA3AF /* loginBg@2x.png in Resources */,
 				4CBAE78B1A703A8000F3DC8E /* myStatusButtonBg@2x.png in Resources */,
 				4CBAE78A1A703A8000F3DC8E /* myStatusButtonBg.png in Resources */,
 			);
@@ -263,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB7FF761A7823BA002CA3AF /* LoginViewController.swift in Sources */,
 				4CD3D8C71A6C161900E05669 /* ViewController.swift in Sources */,
 				4CD3D8C21A6C161900E05669 /* AppDelegate.swift in Sources */,
 				4CD3D8C51A6C161900E05669 /* beerventory.xcdatamodeld in Sources */,
