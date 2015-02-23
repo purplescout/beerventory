@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
   before_filter :login_from_api_token
   before_filter :require_login
 
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def not_authenticated
     respond_to do |format|
-      format.html { redirect_to new_session_url }
+      format.html { redirect_to new_session_url }
       format.json { render nothing: true, status: 401 }
     end
   end

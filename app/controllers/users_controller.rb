@@ -7,11 +7,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    auto_login(@user)
 
     if @user.save
-      redirect_to :organizations
+      respond_to do |format|
+        format.html { redirect_to :organizations }
+        format.json { render json: @user }
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.json { render json: { errors: @user.errors } }
+      end
     end
   end
 

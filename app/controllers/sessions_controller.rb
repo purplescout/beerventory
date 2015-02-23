@@ -6,15 +6,27 @@ class SessionsController < ApplicationController
 
   def create
     if login(params[:email], params[:password])
-      redirect_back_or_to(:organizations)
+      respond_to do |format|
+        format.html { redirect_back_or_to(:organizations) }
+        format.json { render json: current_user }
+      end
     else
-      flash.now[:alert] = 'Login failed'
-      render :new
+      respond_to do |format|
+        format.html do
+          flash.now[:alert] = 'Login failed'
+          render :new
+        end
+        format.json { render json: { errors: "Wrong email or password" } }
+      end
     end
   end
 
   def destroy
     logout
-    redirect_to(root_url, notice: 'Logged out!')
+
+    respond_to do |format|
+      format.html { redirect_to(root_url, notice: 'Logged out!') }
+      format.json { head :ok }
+    end
   end
 end
