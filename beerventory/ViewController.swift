@@ -35,7 +35,16 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  }
+
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    if (NSUserDefaults.standardUserDefaults().objectForKey("userId") == nil) {
+      if let loginViewController: UIViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? UIViewController {
+        //presentViewController(loginViewController, animated: false, completion: nil)
+      }
+
+    }
   }
 
   override func didReceiveMemoryWarning() {
