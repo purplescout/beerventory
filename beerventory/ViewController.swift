@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     super.viewDidAppear(animated)
     if (NSUserDefaults.standardUserDefaults().objectForKey("userId") == nil) {
       if let loginViewController: UIViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? UIViewController {
-        //presentViewController(loginViewController, animated: false, completion: nil)
+        presentViewController(loginViewController, animated: false, completion: nil)
       }
 
     }

@@ -27,6 +27,8 @@
 		4CD3D8CC1A6C161900E05669 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD3D8CB1A6C161900E05669 /* Images.xcassets */; };
 		4CD3D8CF1A6C161900E05669 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD3D8CD1A6C161900E05669 /* LaunchScreen.xib */; };
 		4CD3D8DB1A6C161900E05669 /* beerventoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD3D8DA1A6C161900E05669 /* beerventoryTests.swift */; };
+		4CE978FD1A9BA43A00F6F4FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE978FC1A9BA43A00F6F4FF /* User.swift */; };
+		4CE978FF1A9BA4A500F6F4FF /* BeerventorySessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE978FE1A9BA4A500F6F4FF /* BeerventorySessionManager.swift */; };
 		F16F2547105C6CAE051E54CC /* libPods-beerventory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FD527C2F3DC0F09C7DA721 /* libPods-beerventory.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		4CD3D8D91A6C161900E05669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD3D8DA1A6C161900E05669 /* beerventoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beerventoryTests.swift; sourceTree = "<group>"; };
 		4CE978F91A9BA2F100F6F4FF /* beerventory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "beerventory-Bridging-Header.h"; sourceTree = "<group>"; };
+		4CE978FC1A9BA43A00F6F4FF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4CE978FE1A9BA4A500F6F4FF /* BeerventorySessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerventorySessionManager.swift; sourceTree = "<group>"; };
 		87FD527C2F3DC0F09C7DA721 /* libPods-beerventory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-beerventory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39DF190C30EDB5331DBC042 /* Pods-beerventory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerventory.release.xcconfig"; path = "Pods/Target Support Files/Pods-beerventory/Pods-beerventory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +163,8 @@
 				4CD3D8C31A6C161900E05669 /* beerventory.xcdatamodeld */,
 				4CD3D8BF1A6C161900E05669 /* Supporting Files */,
 				4CE978F91A9BA2F100F6F4FF /* beerventory-Bridging-Header.h */,
+				4CE978FC1A9BA43A00F6F4FF /* User.swift */,
+				4CE978FE1A9BA4A500F6F4FF /* BeerventorySessionManager.swift */,
 			);
 			path = beerventory;
 			sourceTree = "<group>";
@@ -338,6 +344,8 @@
 				4CB7FF761A7823BA002CA3AF /* LoginViewController.swift in Sources */,
 				4CD3D8C71A6C161900E05669 /* ViewController.swift in Sources */,
 				4CD3D8C21A6C161900E05669 /* AppDelegate.swift in Sources */,
+				4CE978FD1A9BA43A00F6F4FF /* User.swift in Sources */,
+				4CE978FF1A9BA4A500F6F4FF /* BeerventorySessionManager.swift in Sources */,
 				4CD3D8C51A6C161900E05669 /* beerventory.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

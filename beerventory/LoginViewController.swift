@@ -31,6 +31,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         nameTextField.becomeFirstResponder()
       }else {
         //login
+        User.login(emailTextField.text, password: passwordTextField.text) { response,error in
+          if response != nil {
+            self.dismissViewControllerAnimated(true, completion: nil)
+          } else {
+            //alert
+          }
+        }
       }
     } else if (textField == nameTextField) {
       invitationCodeTextField.becomeFirstResponder()
