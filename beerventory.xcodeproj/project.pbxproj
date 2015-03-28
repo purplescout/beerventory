@@ -7,19 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4CB7FF691A780D8A002CA3AF /* insertButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF651A780D8A002CA3AF /* insertButtonBg.png */; };
-		4CB7FF6A1A780D8A002CA3AF /* takeOutButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF661A780D8A002CA3AF /* takeOutButtonBg.png */; };
-		4CB7FF6B1A780D8A002CA3AF /* insertButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF671A780D8A002CA3AF /* insertButtonBg@2x.png */; };
-		4CB7FF6C1A780D8A002CA3AF /* takeOutButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF681A780D8A002CA3AF /* takeOutButtonBg@2x.png */; };
-		4CB7FF731A782032002CA3AF /* loginBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF711A782032002CA3AF /* loginBg.png */; };
-		4CB7FF741A782032002CA3AF /* loginBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB7FF721A782032002CA3AF /* loginBg@2x.png */; };
+		4CA51D8B1AC6F4ED00581E2A /* MyStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA51D8A1AC6F4ED00581E2A /* MyStatusTableViewController.swift */; };
+		4CA51D8D1AC6F6AA00581E2A /* HistoryBeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA51D8C1AC6F6AA00581E2A /* HistoryBeerCell.swift */; };
 		4CB7FF761A7823BA002CA3AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7FF751A7823BA002CA3AF /* LoginViewController.swift */; };
-		4CBAE78A1A703A8000F3DC8E /* myStatusButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAE7881A703A8000F3DC8E /* myStatusButtonBg.png */; };
-		4CBAE78B1A703A8000F3DC8E /* myStatusButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAE7891A703A8000F3DC8E /* myStatusButtonBg@2x.png */; };
-		4CBAE7901A703B6E00F3DC8E /* allUserStatusButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAE78C1A703B6E00F3DC8E /* allUserStatusButtonBg.png */; };
-		4CBAE7911A703B6E00F3DC8E /* allUserStatusButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAE78D1A703B6E00F3DC8E /* allUserStatusButtonBg@2x.png */; };
-		4CBAE7921A703B6E00F3DC8E /* fridgeStatusButtonBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAE78E1A703B6E00F3DC8E /* fridgeStatusButtonBg.png */; };
-		4CBAE7931A703B6E00F3DC8E /* fridgeStatusButtonBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAE78F1A703B6E00F3DC8E /* fridgeStatusButtonBg@2x.png */; };
+		4CBC29D41AB5C30C001573C0 /* FridgeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC29D31AB5C30C001573C0 /* FridgeTableViewController.swift */; };
+		4CBC29D61AB5CD38001573C0 /* FridgeBeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC29D51AB5CD38001573C0 /* FridgeBeerCell.swift */; };
+		4CBC29D81AB5E1D9001573C0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC29D71AB5E1D9001573C0 /* UserCell.swift */; };
+		4CBC29DA1AB5E6C2001573C0 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC29D91AB5E6C2001573C0 /* UserTableViewController.swift */; };
 		4CD3D8C21A6C161900E05669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD3D8C11A6C161900E05669 /* AppDelegate.swift */; };
 		4CD3D8C51A6C161900E05669 /* beerventory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CD3D8C31A6C161900E05669 /* beerventory.xcdatamodeld */; };
 		4CD3D8C71A6C161900E05669 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD3D8C61A6C161900E05669 /* ViewController.swift */; };
@@ -44,19 +38,13 @@
 
 /* Begin PBXFileReference section */
 		427204EF3CB876306C06310F /* Pods-beerventory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerventory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beerventory/Pods-beerventory.debug.xcconfig"; sourceTree = "<group>"; };
-		4CB7FF651A780D8A002CA3AF /* insertButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insertButtonBg.png; sourceTree = "<group>"; };
-		4CB7FF661A780D8A002CA3AF /* takeOutButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takeOutButtonBg.png; sourceTree = "<group>"; };
-		4CB7FF671A780D8A002CA3AF /* insertButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "insertButtonBg@2x.png"; sourceTree = "<group>"; };
-		4CB7FF681A780D8A002CA3AF /* takeOutButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "takeOutButtonBg@2x.png"; sourceTree = "<group>"; };
-		4CB7FF711A782032002CA3AF /* loginBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBg.png; sourceTree = "<group>"; };
-		4CB7FF721A782032002CA3AF /* loginBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginBg@2x.png"; sourceTree = "<group>"; };
+		4CA51D8A1AC6F4ED00581E2A /* MyStatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStatusTableViewController.swift; sourceTree = "<group>"; };
+		4CA51D8C1AC6F6AA00581E2A /* HistoryBeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryBeerCell.swift; sourceTree = "<group>"; };
 		4CB7FF751A7823BA002CA3AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		4CBAE7881A703A8000F3DC8E /* myStatusButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myStatusButtonBg.png; sourceTree = "<group>"; };
-		4CBAE7891A703A8000F3DC8E /* myStatusButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myStatusButtonBg@2x.png"; sourceTree = "<group>"; };
-		4CBAE78C1A703B6E00F3DC8E /* allUserStatusButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = allUserStatusButtonBg.png; sourceTree = "<group>"; };
-		4CBAE78D1A703B6E00F3DC8E /* allUserStatusButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "allUserStatusButtonBg@2x.png"; sourceTree = "<group>"; };
-		4CBAE78E1A703B6E00F3DC8E /* fridgeStatusButtonBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fridgeStatusButtonBg.png; sourceTree = "<group>"; };
-		4CBAE78F1A703B6E00F3DC8E /* fridgeStatusButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fridgeStatusButtonBg@2x.png"; sourceTree = "<group>"; };
+		4CBC29D31AB5C30C001573C0 /* FridgeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FridgeTableViewController.swift; sourceTree = "<group>"; };
+		4CBC29D51AB5CD38001573C0 /* FridgeBeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FridgeBeerCell.swift; sourceTree = "<group>"; };
+		4CBC29D71AB5E1D9001573C0 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		4CBC29D91AB5E6C2001573C0 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		4CD3D8BC1A6C161900E05669 /* beerventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beerventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD3D8C01A6C161900E05669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CD3D8C11A6C161900E05669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,18 +102,6 @@
 		4CBAE7711A7033FD00F3DC8E /* images */ = {
 			isa = PBXGroup;
 			children = (
-				4CB7FF711A782032002CA3AF /* loginBg.png */,
-				4CB7FF721A782032002CA3AF /* loginBg@2x.png */,
-				4CB7FF651A780D8A002CA3AF /* insertButtonBg.png */,
-				4CB7FF661A780D8A002CA3AF /* takeOutButtonBg.png */,
-				4CB7FF671A780D8A002CA3AF /* insertButtonBg@2x.png */,
-				4CB7FF681A780D8A002CA3AF /* takeOutButtonBg@2x.png */,
-				4CBAE78C1A703B6E00F3DC8E /* allUserStatusButtonBg.png */,
-				4CBAE78D1A703B6E00F3DC8E /* allUserStatusButtonBg@2x.png */,
-				4CBAE78E1A703B6E00F3DC8E /* fridgeStatusButtonBg.png */,
-				4CBAE78F1A703B6E00F3DC8E /* fridgeStatusButtonBg@2x.png */,
-				4CBAE7881A703A8000F3DC8E /* myStatusButtonBg.png */,
-				4CBAE7891A703A8000F3DC8E /* myStatusButtonBg@2x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -157,6 +133,10 @@
 				4CD3D8C11A6C161900E05669 /* AppDelegate.swift */,
 				4CD3D8C61A6C161900E05669 /* ViewController.swift */,
 				4CB7FF751A7823BA002CA3AF /* LoginViewController.swift */,
+				4CBC29D31AB5C30C001573C0 /* FridgeTableViewController.swift */,
+				4CBC29D91AB5E6C2001573C0 /* UserTableViewController.swift */,
+				4CBC29D51AB5CD38001573C0 /* FridgeBeerCell.swift */,
+				4CBC29D71AB5E1D9001573C0 /* UserCell.swift */,
 				4CD3D8C81A6C161900E05669 /* Main.storyboard */,
 				4CD3D8CB1A6C161900E05669 /* Images.xcassets */,
 				4CD3D8CD1A6C161900E05669 /* LaunchScreen.xib */,
@@ -165,6 +145,8 @@
 				4CE978F91A9BA2F100F6F4FF /* beerventory-Bridging-Header.h */,
 				4CE978FC1A9BA43A00F6F4FF /* User.swift */,
 				4CE978FE1A9BA4A500F6F4FF /* BeerventorySessionManager.swift */,
+				4CA51D8A1AC6F4ED00581E2A /* MyStatusTableViewController.swift */,
+				4CA51D8C1AC6F6AA00581E2A /* HistoryBeerCell.swift */,
 			);
 			path = beerventory;
 			sourceTree = "<group>";
@@ -276,21 +258,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CBAE7931A703B6E00F3DC8E /* fridgeStatusButtonBg@2x.png in Resources */,
-				4CB7FF691A780D8A002CA3AF /* insertButtonBg.png in Resources */,
-				4CBAE7911A703B6E00F3DC8E /* allUserStatusButtonBg@2x.png in Resources */,
 				4CD3D8CA1A6C161900E05669 /* Main.storyboard in Resources */,
-				4CB7FF6C1A780D8A002CA3AF /* takeOutButtonBg@2x.png in Resources */,
-				4CB7FF6A1A780D8A002CA3AF /* takeOutButtonBg.png in Resources */,
-				4CB7FF731A782032002CA3AF /* loginBg.png in Resources */,
-				4CBAE7901A703B6E00F3DC8E /* allUserStatusButtonBg.png in Resources */,
 				4CD3D8CF1A6C161900E05669 /* LaunchScreen.xib in Resources */,
 				4CD3D8CC1A6C161900E05669 /* Images.xcassets in Resources */,
-				4CB7FF6B1A780D8A002CA3AF /* insertButtonBg@2x.png in Resources */,
-				4CBAE7921A703B6E00F3DC8E /* fridgeStatusButtonBg.png in Resources */,
-				4CB7FF741A782032002CA3AF /* loginBg@2x.png in Resources */,
-				4CBAE78B1A703A8000F3DC8E /* myStatusButtonBg@2x.png in Resources */,
-				4CBAE78A1A703A8000F3DC8E /* myStatusButtonBg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,11 +311,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA51D8D1AC6F6AA00581E2A /* HistoryBeerCell.swift in Sources */,
+				4CBC29DA1AB5E6C2001573C0 /* UserTableViewController.swift in Sources */,
 				4CB7FF761A7823BA002CA3AF /* LoginViewController.swift in Sources */,
 				4CD3D8C71A6C161900E05669 /* ViewController.swift in Sources */,
 				4CD3D8C21A6C161900E05669 /* AppDelegate.swift in Sources */,
 				4CE978FD1A9BA43A00F6F4FF /* User.swift in Sources */,
+				4CBC29D41AB5C30C001573C0 /* FridgeTableViewController.swift in Sources */,
+				4CA51D8B1AC6F4ED00581E2A /* MyStatusTableViewController.swift in Sources */,
+				4CBC29D81AB5E1D9001573C0 /* UserCell.swift in Sources */,
 				4CE978FF1A9BA4A500F6F4FF /* BeerventorySessionManager.swift in Sources */,
+				4CBC29D61AB5CD38001573C0 /* FridgeBeerCell.swift in Sources */,
 				4CD3D8C51A6C161900E05669 /* beerventory.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
