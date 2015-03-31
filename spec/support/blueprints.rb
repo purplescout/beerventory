@@ -29,3 +29,10 @@ Beer.blueprint do
   name { "Samuel Adams Boston Lager" }
   volume { 0.355 }
 end
+
+History.blueprint do
+  user { User.make }
+  organization { Organization.make }
+  beer { Beer.make }
+  out { 20 }
+end

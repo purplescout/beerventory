@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127190642) do
+ActiveRecord::Schema.define(version: 20150331171848) do
 
   create_table "beers", force: :cascade do |t|
     t.string  "barcode", null: false
@@ -20,6 +20,24 @@ ActiveRecord::Schema.define(version: 20150127190642) do
   end
 
   add_index "beers", ["barcode"], name: "index_beers_on_barcode", unique: true
+
+  create_table "histories", force: :cascade do |t|
+    t.integer "user_id",                     null: false
+    t.integer "organization_id",             null: false
+    t.integer "beer_id",                     null: false
+    t.integer "in",              default: 0, null: false
+    t.integer "out",             default: 0, null: false
+  end
+
+  add_index "histories", ["user_id", "organization_id", "beer_id"], name: "index_histories_on_user_id_and_organization_id_and_beer_id", unique: true
+
+  create_table "inventories", force: :cascade do |t|
+    t.integer "organization_id",             null: false
+    t.integer "beer_id",                     null: false
+    t.integer "amount",          default: 0, null: false
+  end
+
+  add_index "inventories", ["organization_id", "beer_id"], name: "index_inventories_on_organization_id_and_beer_id", unique: true
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id"
@@ -41,9 +59,9 @@ ActiveRecord::Schema.define(version: 20150127190642) do
   add_index "organizations", ["code"], name: "index_organizations_on_code", unique: true
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                           null: false
-    t.string   "crypted_password",                null: false
-    t.string   "salt",                            null: false
+    t.string   "email",                                        null: false
+    t.string   "crypted_password",                             null: false
+    t.string   "salt",                                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_me_token"
@@ -51,7 +69,8 @@ ActiveRecord::Schema.define(version: 20150127190642) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
-    t.string   "api_token",                       null: false
+    t.string   "api_token",                                    null: false
+    t.string   "name",                            default: "", null: false
   end
 
   add_index "users", ["api_token"], name: "index_users_on_api_token", unique: true

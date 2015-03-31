@@ -7,9 +7,13 @@ Rails.application.routes.draw do
   resources :organizations, only: [:index, :show, :new, :create] do
     put :join, on: :collection
     put :leave, on: :member
+
+    resource :history
+    resource :inventory
   end
 
   resources :beers, only: [:show]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
