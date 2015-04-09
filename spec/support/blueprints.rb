@@ -36,3 +36,9 @@ History.blueprint do
   beer { Beer.make }
   out { 20 }
 end
+
+Inventory.blueprint do
+  organization { Organization.make }
+  beer { Beer.make }
+  amount { 20 }
+end

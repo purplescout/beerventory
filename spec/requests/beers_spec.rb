@@ -20,6 +20,7 @@ describe "Beers API" do
 
     expect(response).to be_success
     json = JSON.parse(response.body)
-    expect(json["name"]).to eq "Pripps Blå"
+    puts json.inspect
+    expect(json["beer"]["name"]).to eq "Pripps Blå"
   end
 end
