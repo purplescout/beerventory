@@ -1,3 +1,3 @@
 class BeerSerializer < ActiveModel::Serializer
-  attributes :name, :volume
+  attributes :id, :name, :volume
 end

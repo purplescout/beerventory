@@ -9,18 +9,40 @@ describe "Beers API" do
     beer = Beer.make!(barcode: "1234", name: "Pripps Blå")
   end
 
-  it "fails when not logged in" do
-    get "/beers/1234", nil, default_headers
+  describe "fetching beers" do
+    it "fails when not logged in" do
+      get "/beers/1234", nil, default_headers
 
-    expect(response.status).to eq 401
+      expect(response.status).to eq 401
+    end
+
+    it "fetches beer name based on barcode" do
+      get "/beers/1234", nil, default_headers.merge(auth_headers)
+
+      expect(response).to be_success
+      json = JSON.parse(response.body)
+      expect(json["beer"]["name"]).to eq "Pripps Blå"
+    end
   end
 
-  it "fetches beer name based on barcode" do
-    get "/beers/1234", nil, default_headers.merge(auth_headers)
+  describe "saving beers" do
+    it "saves beer for a new barcode" do
+      post "/beers", { beer: { barcode: "141414", name: "Singha", volume: 0.66 } }, default_headers.merge(auth_headers)
 
-    expect(response).to be_success
-    json = JSON.parse(response.body)
-    puts json.inspect
-    expect(json["beer"]["name"]).to eq "Pripps Blå"
+      expect(response).to be_success
+      json = JSON.parse(response.body)
+      expect(json["beer"]["name"]).to eq "Singha"
+    end
+
+    it "fails if not logged in" do
+      post "/beers", { beer: { barcode: "141414", name: "Singha", volume: 0.66 } }, default_headers
+      expect(response).not_to be_success
+    end
+
+    it "fails if trying to create a new beer with existing barcode" do
+      Beer.make!(barcode: "141414")
+      post "/beers", { beer: { barcode: "141414", name: "Singha", volume: 0.66 } }, default_headers
+      expect(response).not_to be_success
+    end
   end
 end

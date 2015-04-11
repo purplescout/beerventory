@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resource :inventory
   end
 
-  resources :beers, only: [:show]
+  resources :beers, only: [:create, :show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
