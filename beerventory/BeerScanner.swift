@@ -68,7 +68,7 @@ class BeerScanner: NSObject, AVCaptureMetadataOutputObjectsDelegate {
 
   func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
     if (metadataObjects != nil && metadataObjects.count > 0) {
-      let metadataObj = metadataObjects[0] as AVMetadataMachineReadableCodeObject
+      let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
       if (metadataObj.type == AVMetadataObjectTypeEAN13Code || metadataObj.type == AVMetadataObjectTypeEAN8Code) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
           self.stopReading()

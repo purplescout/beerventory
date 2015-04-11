@@ -18,8 +18,15 @@ class FridgeTableViewController: UITableViewController, UITableViewDataSource {
     return 1
   }
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("beerCell") as FridgeBeerCell
-    cell.label.text = "1st Mythos"
+    let cell = tableView.dequeueReusableCellWithIdentifier("beerCell") as! FridgeBeerCell
+    var attrBeer = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 20.0)!]
+    var beerString = NSMutableAttributedString(string:"1 st Mythos", attributes:attrBeer)
+    var attrVolume = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 14.0)!]
+    var volumeString = NSMutableAttributedString(string:" (33cl)", attributes:attrVolume)
+
+    beerString.appendAttributedString(volumeString)
+
+    cell.label.attributedText = beerString
     return cell
   }
 

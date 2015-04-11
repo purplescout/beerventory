@@ -18,7 +18,7 @@ class UserTableViewController: UITableViewController, UITableViewDataSource {
     return 1
   }
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("userCell") as UserCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("userCell") as! UserCell
     cell.label.text = "Mia"
     cell.noLabel.text = "+3"
     return cell

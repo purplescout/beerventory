@@ -22,7 +22,7 @@ class MyStatusTableViewController: UITableViewController, UITableViewDataSource 
     return 1
   }
  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as HistoryBeerCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as! HistoryBeerCell
     cell.beerLabel.text = "Staropramen"
     cell.inLabel.text = "+10"
     cell.outLabel.text = "-10"

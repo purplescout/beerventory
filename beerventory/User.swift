@@ -14,8 +14,8 @@ class User {
     let params = ["email":email, "password":password]
     manager.POST("session", parameters: params, success: { (datatask, response) -> Void in
       println("response: \(response)")
-      let responseObject = response as NSDictionary
-      let userObject = responseObject["user"] as NSDictionary
+      let responseObject = response as! NSDictionary
+      let userObject = responseObject["user"] as! NSDictionary
 
       NSUserDefaults.standardUserDefaults().setObject(userObject["id"], forKey: "userId")
       NSUserDefaults.standardUserDefaults().setObject(userObject["api_token"], forKey: "apiToken")
