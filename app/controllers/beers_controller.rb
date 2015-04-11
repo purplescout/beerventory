@@ -15,7 +15,7 @@ class BeersController < ApplicationController
     if beer.save
       render json: beer
     else
-      render json: { errors: beer.errors }
+      render json: { errors: beer.errors }, status: :unprocessable_entity
     end
   end
 

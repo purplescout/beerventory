@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
           flash.now[:alert] = 'Login failed'
           render :new
         end
-        format.json { render json: { errors: "Wrong email or password" } }
+        format.json { render json: { errors: "Wrong email or password" }, status: :unprocessable_entity }
       end
     end
   end

@@ -32,6 +32,7 @@ describe "Beers API" do
       expect(response).to be_success
       json = JSON.parse(response.body)
       expect(json["beer"]["name"]).to eq "Singha"
+      expect(json["beer"]["volume"]).to eq "0.66"
     end
 
     it "fails if not logged in" do
