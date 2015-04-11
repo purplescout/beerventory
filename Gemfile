@@ -36,6 +36,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'sorcery'
 gem "active_model_serializers", "~> 0.8.0"
+gem 'puma'
+gem "rack-timeout"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
