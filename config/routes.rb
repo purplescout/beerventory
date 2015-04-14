@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root "sessions#new"
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create] do
+    get :me, on: :collection
+  end
+
   resource :session, only: [:new, :create, :destroy]
 
   resources :organizations, only: [:index, :show, :new, :create] do
