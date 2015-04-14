@@ -39,7 +39,7 @@ class AddNewBeerController: UIViewController, UITextFieldDelegate {
     } else if volumeField.text.isEmpty || volumeField.text.toInt() == nil {
       volumeField.becomeFirstResponder()
     } else {
-      let vol = Float(volumeField.text.toInt()!) / 10
+      let vol = Float(volumeField.text.toInt()!) / 1000
       Beer.save(ean, name:beerNameField.text, volume:vol, completionHandler: { (beer, error) -> (Void) in
         if error == nil {
           self.delegate!.addNewBeer(beer!)

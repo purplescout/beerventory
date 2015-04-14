@@ -24,16 +24,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   }
 
   func textFieldShouldReturn(textField: UITextField) -> Bool {
-    if (textField == emailTextField) {
+    User.login("mia.henriksson@gmail.com", password: "anders") { response,error in
+
+      self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    return true
+
+   /* if (textField == emailTextField) {
       passwordTextField.becomeFirstResponder()
     } else if (textField == passwordTextField) {
       if (segmentedControl.selectedSegmentIndex == 0) {
         nameTextField.becomeFirstResponder()
       }else {
         //login
-        User.login(emailTextField.text, password: passwordTextField.text) { response,error in
-          if response != nil {
-            self.dismissViewControllerAnimated(true, completion: nil)
+
           } else {
             //alert
           }
@@ -45,7 +49,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       //signup
       dismissViewControllerAnimated(true, completion: nil)
     }
-    return true
+    return true*/
   }
 
   override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
