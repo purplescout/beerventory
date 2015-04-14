@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     put :join, on: :collection
     put :leave, on: :member
 
-    resource :inventory
     resource :history, only: [:show]
+    resource :inventory, only: [:show, :update]
   end
 
   resources :beers, only: [:create, :show]
