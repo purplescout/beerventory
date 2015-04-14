@@ -49,4 +49,14 @@ class Beer {
         completionHandler(nil, error)
     }
   }
+
+  func attributedName() -> NSAttributedString {
+    var attrBeer = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 20.0)!]
+    var beerString = NSMutableAttributedString(string:"\(amount) \(name)", attributes:attrBeer)
+    var attrVolume = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 14.0)!]
+    var volumeString = NSMutableAttributedString(string:" (\(volume/1000) ml)", attributes:attrVolume)
+    beerString.appendAttributedString(volumeString)
+    
+    return beerString
+  }
 }

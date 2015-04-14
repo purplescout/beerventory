@@ -11,6 +11,7 @@
 		4C1A82811AC70B570015E287 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1A82801AC70B570015E287 /* AVFoundation.framework */; };
 		4C6DFCA51AD9593F0044D58D /* AddNewBeerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6DFCA41AD9593F0044D58D /* AddNewBeerController.swift */; };
 		4C6DFCA71AD95D2F0044D58D /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6DFCA61AD95D2F0044D58D /* Beer.swift */; };
+		4C6DFCA91ADD7A000044D58D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6DFCA81ADD7A000044D58D /* History.swift */; };
 		4CA51D8B1AC6F4ED00581E2A /* MyStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA51D8A1AC6F4ED00581E2A /* MyStatusTableViewController.swift */; };
 		4CA51D8D1AC6F6AA00581E2A /* HistoryBeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA51D8C1AC6F6AA00581E2A /* HistoryBeerCell.swift */; };
 		4CB7FF761A7823BA002CA3AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7FF751A7823BA002CA3AF /* LoginViewController.swift */; };
@@ -49,6 +50,7 @@
 		4C1A82801AC70B570015E287 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4C6DFCA41AD9593F0044D58D /* AddNewBeerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewBeerController.swift; sourceTree = "<group>"; };
 		4C6DFCA61AD95D2F0044D58D /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		4C6DFCA81ADD7A000044D58D /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		4CA51D8A1AC6F4ED00581E2A /* MyStatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStatusTableViewController.swift; sourceTree = "<group>"; };
 		4CA51D8C1AC6F6AA00581E2A /* HistoryBeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryBeerCell.swift; sourceTree = "<group>"; };
 		4CB7FF751A7823BA002CA3AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				4C6DFCA61AD95D2F0044D58D /* Beer.swift */,
 				4CE978FE1A9BA4A500F6F4FF /* BeerventorySessionManager.swift */,
 				4CA51D8A1AC6F4ED00581E2A /* MyStatusTableViewController.swift */,
+				4C6DFCA81ADD7A000044D58D /* History.swift */,
 				4CA51D8C1AC6F6AA00581E2A /* HistoryBeerCell.swift */,
 				4C1A827E1AC708A00015E287 /* TakeOutViewController.swift */,
 				4CBE945E1ACAFDED00C1AEF0 /* InsertViewController.swift */,
@@ -327,6 +330,7 @@
 			files = (
 				4C1A827F1AC708A00015E287 /* TakeOutViewController.swift in Sources */,
 				4C6DFCA71AD95D2F0044D58D /* Beer.swift in Sources */,
+				4C6DFCA91ADD7A000044D58D /* History.swift in Sources */,
 				4CA51D8D1AC6F6AA00581E2A /* HistoryBeerCell.swift in Sources */,
 				4CBE94631ACB0D2D00C1AEF0 /* InsertBeerCell.swift in Sources */,
 				4CBC29DA1AB5E6C2001573C0 /* UserTableViewController.swift in Sources */,

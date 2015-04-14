@@ -13,6 +13,18 @@ class MyStatusTableViewController: UITableViewController, UITableViewDataSource 
   @IBOutlet weak var totalInLabel: UILabel!
   @IBOutlet weak var totalOutLabel: UILabel!
 
+  var histories:[History]?
+
+  override func viewDidLoad() {
+    History.list { (history, error) -> (Void) in
+      self.histories = history
+      self.totalInLabel.text = "+\(History.totalIn)"
+      self.totalOutLabel.text = "+\(History.totalOut)"
+      self.tableView.reloadData()
+    }
+//TODO hantera error
+  }
+
   
   @IBAction func done(sender: AnyObject) {
     dismissViewControllerAnimated(true, completion: nil)
@@ -21,16 +33,22 @@ class MyStatusTableViewController: UITableViewController, UITableViewDataSource 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
   }
- override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let history = histories![indexPath.row]
     let cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as! HistoryBeerCell
-    cell.beerLabel.text = "Staropramen"
-    cell.inLabel.text = "+10"
-    cell.outLabel.text = "-10"
+    cell.beerLabel.attributedText = history.beer.attributedName()
+    cell.inLabel.text = "+\(history.amountIn)"
+    cell.outLabel.text = "-\(history.amountOut)"
     return cell
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    if histories == nil {
+      return 0
+    } else {
+      return histories!.count
+    }
   }
 }
 

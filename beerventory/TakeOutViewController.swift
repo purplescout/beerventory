@@ -39,6 +39,8 @@ class TakeOutViewController: UIViewController {
     beerLabel.text = ean
     okButton.titleLabel?.text = "I will!"
     //else
+    //messageLabel.text = "Nobody put this beer in the fridge"
+    //beerLabel.text = ""
     //okButton.titleLabel?.text = "Ok"
 
   }
