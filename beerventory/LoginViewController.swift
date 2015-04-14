@@ -13,43 +13,64 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var nameTextField: UITextField!
   @IBOutlet weak var invitationCodeTextField: UITextField!
-  @IBOutlet weak var segmentedControl: UISegmentedControl!
   @IBOutlet weak var forgotPasswordButton: UIButton!
+  @IBOutlet weak var switchModeButton: UIButton!
 
+  var signUpMode:Bool = true
+
+  @IBAction func forgotPassword(sender: AnyObject) {
+  }
+  
   @IBAction func switchMode(sender: AnyObject) {
-    let isSignIn = segmentedControl.selectedSegmentIndex == 0
-    nameTextField.hidden = !isSignIn
-    invitationCodeTextField.hidden = !isSignIn
-    forgotPasswordButton.hidden = isSignIn
+    signUpMode = !signUpMode
+    nameTextField.hidden = signUpMode
+    invitationCodeTextField.hidden = signUpMode
+    forgotPasswordButton.hidden = !signUpMode
+    switchModeButton.setTitle(signUpMode ? "Sign up" : "Already have an account? Sign in", forState: .Normal)
   }
 
   func textFieldShouldReturn(textField: UITextField) -> Bool {
-    User.login("mia.henriksson@gmail.com", password: "anders") { response,error in
+    /*User.login("mia.henriksson@gmail.com", password: "anders") { response,error in
 
       self.dismissViewControllerAnimated(true, completion: nil)
     }
-    return true
+    return true*/
 
-   /* if (textField == emailTextField) {
+    if textField == emailTextField {
       passwordTextField.becomeFirstResponder()
-    } else if (textField == passwordTextField) {
-      if (segmentedControl.selectedSegmentIndex == 0) {
+    } else if textField == passwordTextField {
+      if signUpMode {
         nameTextField.becomeFirstResponder()
-      }else {
+      } else {
         //login
-
-          } else {
-            //alert
+        if emailTextField.text.isEmpty {
+          emailTextField.becomeFirstResponder()
+        } else if passwordTextField.text.isEmpty {
+          passwordTextField.becomeFirstResponder()
+        } else {
+          User.login(emailTextField.text, password: passwordTextField.text) { response,error in
+            self.dismissViewControllerAnimated(true, completion: nil)
+            //TODO handle error
           }
         }
       }
     } else if (textField == nameTextField) {
       invitationCodeTextField.becomeFirstResponder()
     } else if (textField == invitationCodeTextField) {
-      //signup
-      dismissViewControllerAnimated(true, completion: nil)
+      if emailTextField.text.isEmpty {
+        emailTextField.becomeFirstResponder()
+      } else if passwordTextField.text.isEmpty {
+        passwordTextField.becomeFirstResponder()
+      } else if nameTextField.text.isEmpty {
+        nameTextField.becomeFirstResponder()
+      } else if invitationCodeTextField.text.isEmpty {
+        invitationCodeTextField.becomeFirstResponder()
+      } else {
+        //signup
+        dismissViewControllerAnimated(true, completion: nil)
+      }
     }
-    return true*/
+    return true
   }
 
   override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
