@@ -27,6 +27,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     invitationCodeTextField.hidden = !signUpMode
     forgotPasswordButton.hidden = signUpMode
     switchModeButton.setTitle(signUpMode ? "Already have an account? Sign in" : "Have an invitation code? Sign up", forState: .Normal)
+    passwordTextField.returnKeyType = signUpMode ? .Next : .Send
   }
 
   func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -36,11 +37,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     return true*/
 
     if textField == emailTextField {
-      if signUpMode {
-        passwordTextField.returnKeyType = .Next
-      } else {
-        passwordTextField.returnKeyType = .Send
-      }
       passwordTextField.becomeFirstResponder()
     } else if textField == passwordTextField {
       if signUpMode {
