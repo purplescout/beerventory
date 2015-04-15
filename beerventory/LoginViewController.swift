@@ -23,20 +23,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   
   @IBAction func switchMode(sender: AnyObject) {
     signUpMode = !signUpMode
-    nameTextField.hidden = signUpMode
-    invitationCodeTextField.hidden = signUpMode
-    forgotPasswordButton.hidden = !signUpMode
-    switchModeButton.setTitle(signUpMode ? "Sign up" : "Already have an account? Sign in", forState: .Normal)
+    nameTextField.hidden = !signUpMode
+    invitationCodeTextField.hidden = !signUpMode
+    forgotPasswordButton.hidden = signUpMode
+    switchModeButton.setTitle(signUpMode ? "Already have an account? Sign in" : "Have an invitation code? Sign up", forState: .Normal)
   }
 
   func textFieldShouldReturn(textField: UITextField) -> Bool {
     /*User.login("mia.henriksson@gmail.com", password: "anders") { response,error in
-
       self.dismissViewControllerAnimated(true, completion: nil)
     }
     return true*/
 
     if textField == emailTextField {
+      if signUpMode {
+        passwordTextField.returnKeyType = .Next
+      } else {
+        passwordTextField.returnKeyType = .Send
+      }
       passwordTextField.becomeFirstResponder()
     } else if textField == passwordTextField {
       if signUpMode {
