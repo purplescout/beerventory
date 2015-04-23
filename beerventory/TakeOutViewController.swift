@@ -17,14 +17,18 @@ class TakeOutViewController: UIViewController {
   @IBOutlet weak var okButton: UIButton!
 
   var scanner: BeerScanner?
+  var beer: Beer?
 
 
   @IBAction func cancel(sender: AnyObject) {
     dismissViewControllerAnimated(true, completion: nil)
   }
   @IBAction func ok(sender: AnyObject) {
-    //TODO save
-    dismissViewControllerAnimated(true, completion: nil)
+    beer!.amount = -1
+    Inventory.update([beer!], completionHandler: { (error) -> (Void) in
+      //TODO handle error
+      self.dismissViewControllerAnimated(true, completion: nil)
+    })
   }
 
   override func viewDidLoad() {
@@ -34,14 +38,17 @@ class TakeOutViewController: UIViewController {
   }
 
   func findBeer(ean: String) {
-    //if found beer
-    messageLabel.text = "Enjoy your"
-    beerLabel.text = ean
-    okButton.titleLabel?.text = "I will!"
-    //else
-    //messageLabel.text = "Nobody put this beer in the fridge"
-    //beerLabel.text = ""
-    //okButton.titleLabel?.text = "Ok"
+    //alse check if beer in fridge
+    Beer.find(ean, completionHandler: { (beer, error) -> (Void) in
+      if beer == nil {
+        //beer not in system
+      } else {
 
+        self.beer = beer!
+        self.messageLabel.text = "Enjoy your"
+        self.beerLabel.attributedText = beer!.attributedName(false)
+        self.okButton.titleLabel?.text = "I will!"
+      }
+    })
   }
 }

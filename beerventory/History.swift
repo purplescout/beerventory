@@ -18,14 +18,16 @@ class History {
 
   init(dict:NSDictionary) {
     beer = Beer(dict:dict["beer"] as! NSDictionary)
-    amountIn = dict["amountIn"] as! Int
-    amountOut = dict["amountOut"] as! Int
+    amountIn = dict["in"] as! Int
+    amountOut = dict["out"] as! Int
   }
 
   class func list(completionHandler: ([History]?, NSError?) -> (Void)) {
     let manager = BeerventorySessionManager.sharedInstance
-    //TODO correct id
-    manager.GET("organization/id/history", parameters: nil, success: { (datatask, response) -> Void in
+    let orgId: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("organizationId")!
+    History.totalIn = 0
+    History.totalOut = 0
+    manager.GET("organizations/\(orgId)/history", parameters: nil, success: { (datatask, response) -> Void in
       let responseObject = response as! NSDictionary
       var histories = [History]()
       let historyObjects = responseObject["histories"] as! [NSDictionary]

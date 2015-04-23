@@ -13,6 +13,7 @@ class AddNewBeerController: UIViewController, UITextFieldDelegate {
   var delegate:InsertViewController!
   var ean:String!
 
+  @IBOutlet weak var addItButton: UIButton!
   @IBOutlet weak var beerNameField: UITextField!
   @IBOutlet weak var volumeField: UITextField!
   @IBAction func cancel(sender: AnyObject) {
@@ -39,6 +40,7 @@ class AddNewBeerController: UIViewController, UITextFieldDelegate {
     } else if volumeField.text.isEmpty || volumeField.text.toInt() == nil {
       volumeField.becomeFirstResponder()
     } else {
+      addItButton.enabled = false
       let vol = Float(volumeField.text.toInt()!) / 1000
       Beer.save(ean, name:beerNameField.text, volume:vol, completionHandler: { (beer, error) -> (Void) in
         if error == nil {

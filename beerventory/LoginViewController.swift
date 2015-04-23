@@ -31,11 +31,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   }
 
   func textFieldShouldReturn(textField: UITextField) -> Bool {
-    /*User.login("mia.henriksson@gmail.com", password: "anders") { response,error in
-      self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    return true*/
-
     if textField == emailTextField {
       passwordTextField.becomeFirstResponder()
     } else if textField == passwordTextField {

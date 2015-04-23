@@ -43,7 +43,9 @@ class ViewController: UIViewController {
       if let loginViewController: UIViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? UIViewController {
         presentViewController(loginViewController, animated: false, completion: nil)
       }
-
+    } else {
+      organizationLabel.text = NSUserDefaults.standardUserDefaults().objectForKey("organizationName") as? String
+      nameLabel.text = NSUserDefaults.standardUserDefaults().objectForKey("userName") as? String
     }
   }
 

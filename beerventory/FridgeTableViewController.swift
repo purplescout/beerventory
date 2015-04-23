@@ -10,6 +10,15 @@ import UIKit
 
 class FridgeTableViewController: UITableViewController, UITableViewDataSource {
 
+  var inventories = [Inventory]()
+
+  override func viewDidLoad() {
+    Inventory.list { (inventories, error) -> (Void) in
+      self.inventories = inventories!
+      self.tableView.reloadData()
+    }
+  }
+
   @IBAction func done(sender: AnyObject) {
     dismissViewControllerAnimated(true, completion: nil)
   }
@@ -17,21 +26,17 @@ class FridgeTableViewController: UITableViewController, UITableViewDataSource {
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
   }
+
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let inventory = inventories[indexPath.row]
     let cell = tableView.dequeueReusableCellWithIdentifier("beerCell") as! FridgeBeerCell
-    var attrBeer = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 20.0)!]
-    var beerString = NSMutableAttributedString(string:"1 st Mythos", attributes:attrBeer)
-    var attrVolume = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 14.0)!]
-    var volumeString = NSMutableAttributedString(string:" (33cl)", attributes:attrVolume)
 
-    beerString.appendAttributedString(volumeString)
-
-    cell.label.attributedText = beerString
+    cell.label.attributedText = inventory.attributedName()
     return cell
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return inventories.count
   }
 }
 

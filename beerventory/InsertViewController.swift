@@ -39,7 +39,7 @@ class InsertViewController: UITableViewController, UITableViewDataSource {
     let cell = tableView.dequeueReusableCellWithIdentifier("insertBeerCell") as! InsertBeerCell
     cell.controller = self
     cell.beerId = beer.id
-    cell.beerLabel.attributedText = beer.attributedName()
+    cell.beerLabel.attributedText = beer.attributedName(false)
     let amount = beer.amount
     cell.numberOfBeersLabel.text = "\(amount)"
     return cell

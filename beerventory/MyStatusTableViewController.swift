@@ -19,7 +19,7 @@ class MyStatusTableViewController: UITableViewController, UITableViewDataSource 
     History.list { (history, error) -> (Void) in
       self.histories = history
       self.totalInLabel.text = "+\(History.totalIn)"
-      self.totalOutLabel.text = "+\(History.totalOut)"
+      self.totalOutLabel.text = "-\(History.totalOut)"
       self.tableView.reloadData()
     }
 //TODO hantera error
@@ -37,9 +37,18 @@ class MyStatusTableViewController: UITableViewController, UITableViewDataSource 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let history = histories![indexPath.row]
     let cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as! HistoryBeerCell
-    cell.beerLabel.attributedText = history.beer.attributedName()
-    cell.inLabel.text = "+\(history.amountIn)"
-    cell.outLabel.text = "-\(history.amountOut)"
+    cell.beerLabel.attributedText = history.beer.attributedName(false)
+    if history.amountIn > 0 {
+      cell.inLabel.text = "+\(history.amountIn)"
+    } else {
+      cell.inLabel.text = ""
+    }
+    if history.amountOut > 0 {
+      cell.outLabel.text = "-\(history.amountOut)"
+    } else {
+      cell.outLabel.text = ""
+    }
+
     return cell
   }
 

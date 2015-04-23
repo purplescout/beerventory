@@ -17,10 +17,24 @@ class Inventory {
     amount = dict["amount"] as! Int
   }
 
+
+  func attributedName() -> NSAttributedString {
+    var attrBeer = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 20.0)!]
+    var beerString = NSMutableAttributedString()
+    beerString.appendAttributedString(NSMutableAttributedString(string:"\(amount) ", attributes:attrBeer))
+    beerString.appendAttributedString(NSMutableAttributedString(string:beer.name, attributes:attrBeer))
+
+    var attrVolume = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 14.0)!]
+    var volumeString = NSMutableAttributedString(string:" (\(Int(beer.volume*1000)) ml)", attributes:attrVolume)
+    beerString.appendAttributedString(volumeString)
+
+    return beerString
+  }
+  
   class func list(completionHandler: ([Inventory]?, NSError?) -> (Void)) {
     let manager = BeerventorySessionManager.sharedInstance
-    //TODO correct id
-    manager.GET("organization/id/inventory", parameters: nil, success: { (datatask, response) -> Void in
+    let orgId: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("organizationId")!
+    manager.GET("organizations/\(orgId)/inventory", parameters: nil, success: { (datatask, response) -> Void in
       let responseObject = response as! NSDictionary
       var inventories = [Inventory]()
       let inventoryObjects = responseObject["inventories"] as! [NSDictionary]
@@ -46,8 +60,8 @@ class Inventory {
       dict["beers"]!.append(beerDict)
     }
     let manager = BeerventorySessionManager.sharedInstance
-    //TODO correct id
-    manager.GET("organization/id/inventory", parameters: dict, success: { (datatask, response) -> Void in
+    let orgId: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("organizationId")!
+    manager.PUT("organizations/\(orgId)/inventory", parameters: dict, success: { (datatask, response) -> Void in
       completionHandler(nil)
       }) { (datatask, error) -> Void in
         println("error: \(error)")

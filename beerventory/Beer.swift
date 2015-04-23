@@ -50,11 +50,16 @@ class Beer {
     }
   }
 
-  func attributedName() -> NSAttributedString {
+  func attributedName(withAmount: Bool) -> NSAttributedString {
     var attrBeer = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 20.0)!]
-    var beerString = NSMutableAttributedString(string:"\(amount) \(name)", attributes:attrBeer)
+    var beerString = NSMutableAttributedString()
+    if withAmount {
+      beerString.appendAttributedString(NSMutableAttributedString(string:"\(amount) ", attributes:attrBeer))
+    }
+    beerString.appendAttributedString(NSMutableAttributedString(string:name, attributes:attrBeer))
+
     var attrVolume = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 14.0)!]
-    var volumeString = NSMutableAttributedString(string:" (\(volume/1000) ml)", attributes:attrVolume)
+    var volumeString = NSMutableAttributedString(string:" (\(Int(volume*1000)) ml)", attributes:attrVolume)
     beerString.appendAttributedString(volumeString)
     
     return beerString
