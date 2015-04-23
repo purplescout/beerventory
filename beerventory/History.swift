@@ -24,6 +24,7 @@ class History {
 
   class func list(completionHandler: ([History]?, NSError?) -> (Void)) {
     let manager = BeerventorySessionManager.sharedInstance
+    //TODO correct id
     manager.GET("organization/id/history", parameters: nil, success: { (datatask, response) -> Void in
       let responseObject = response as! NSDictionary
       var histories = [History]()

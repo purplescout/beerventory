@@ -96,7 +96,10 @@ class InsertViewController: UITableViewController, UITableViewDataSource {
   }
 
   @IBAction func sendBeers(sender: AnyObject) {
-    dismissViewControllerAnimated(true, completion: nil)
+    Inventory.update(beers, completionHandler: { (error) -> (Void) in
+      //TODO
+      self.dismissViewControllerAnimated(true, completion: nil)
+    })
   }
 
 }
