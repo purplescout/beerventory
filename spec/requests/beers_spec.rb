@@ -27,7 +27,7 @@ describe "Beers API" do
 
   describe "saving beers" do
     it "saves beer for a new barcode" do
-      post "/beers", { beer: { barcode: "141414", name: "Singha", volume: 0.66 } }, default_headers.merge(auth_headers)
+      post "/beers", { beer: { barcode: "141414", name: "Singha", volume: "0.66" } }, default_headers.merge(auth_headers)
 
       expect(response).to be_success
       json = JSON.parse(response.body)
@@ -36,13 +36,13 @@ describe "Beers API" do
     end
 
     it "fails if not logged in" do
-      post "/beers", { beer: { barcode: "141414", name: "Singha", volume: 0.66 } }, default_headers
+      post "/beers", { beer: { barcode: "141414", name: "Singha", volume: "0.66" } }, default_headers
       expect(response).not_to be_success
     end
 
     it "fails if trying to create a new beer with existing barcode" do
       Beer.make!(barcode: "141414")
-      post "/beers", { beer: { barcode: "141414", name: "Singha", volume: 0.66 } }, default_headers
+      post "/beers", { beer: { barcode: "141414", name: "Singha", volume: "0.66" } }, default_headers
       expect(response).not_to be_success
     end
   end
