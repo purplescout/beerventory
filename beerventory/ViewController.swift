@@ -9,14 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-  @IBOutlet weak var nameLabel: UILabel!
-  @IBOutlet weak var organizationLabel: UILabel!
   @IBOutlet weak var myStatusLabel: UILabel!
   @IBOutlet weak var fridgeStatusLabel: UILabel!
   @IBOutlet weak var allUserStatusLabel: UILabel!
   @IBOutlet weak var takeOutButtonLabel: UILabel!
   @IBOutlet weak var insertButtonLabel: UILabel!
+  @IBOutlet weak var nameButton: UIButton!
+  @IBOutlet weak var organizationButton: UIButton!
 
+  @IBAction func showOrganizationSwitcher(sender: AnyObject) {
+    
+  }
+  @IBAction func showUserOptions(sender: AnyObject) {
+  }
   @IBAction func showMyStatus(sender: AnyObject) {
   }
 
@@ -44,8 +49,8 @@ class ViewController: UIViewController {
         presentViewController(loginViewController, animated: false, completion: nil)
       }
     } else {
-      organizationLabel.text = NSUserDefaults.standardUserDefaults().objectForKey("organizationName") as? String
-      nameLabel.text = NSUserDefaults.standardUserDefaults().objectForKey("userName") as? String
+      organizationButton.setTitle(NSUserDefaults.standardUserDefaults().objectForKey("organizationName") as? String, forState: .Normal)
+      nameButton.setTitle(NSUserDefaults.standardUserDefaults().objectForKey("userName") as? String, forState: .Normal)
     }
   }
 

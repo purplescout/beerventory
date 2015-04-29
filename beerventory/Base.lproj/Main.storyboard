@@ -162,24 +162,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="nO4-fH-7C7">
-                                <rect key="frame" x="16" y="35" width="456" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="rZ5-WD-pwk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
-                                <color key="textColor" red="0.19215686269999999" green="0.18823529410000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="vCE-JH-ueh">
-                                <rect key="frame" x="16" y="79" width="456" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dTl-rf-jvc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
-                                <color key="textColor" red="0.19215686269999999" green="0.18823529410000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xpj-GY-SgA">
                                 <rect key="frame" x="480" y="0.0" width="120" height="123"/>
                                 <subviews>
@@ -365,24 +347,54 @@
                                     <constraint firstAttribute="height" constant="87" id="US2-GL-7Yg"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5h-FP-9JD">
+                                <rect key="frame" x="16" y="35" width="456" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lpn-VZ-O8B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
+                                <state key="normal" title="Name">
+                                    <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showUserOptions:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6jq-ys-I5s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5V-UE-rVv">
+                                <rect key="frame" x="16" y="79" width="456" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NKg-Tp-qS0"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Yin-V2-sqI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                <state key="normal" title="Organization">
+                                    <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showOrganizationSwitcher:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0d5-ud-YUl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="u0F-YI-Pq0" secondAttribute="bottom" id="6OR-O4-dwT"/>
+                            <constraint firstItem="I5h-FP-9JD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="DIU-Yi-wCV"/>
+                            <constraint firstItem="r5V-UE-rVv" firstAttribute="top" secondItem="I5h-FP-9JD" secondAttribute="bottom" constant="4" id="DhM-vr-Eua"/>
+                            <constraint firstItem="I5h-FP-9JD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="IPD-Hx-NP1"/>
                             <constraint firstAttribute="centerY" secondItem="JKD-UQ-MJo" secondAttribute="centerY" constant="105" id="MOU-Vq-35k"/>
                             <constraint firstItem="Xpj-GY-SgA" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="YB5-yV-2Ou"/>
                             <constraint firstItem="xVh-Se-msN" firstAttribute="top" secondItem="JKD-UQ-MJo" secondAttribute="bottom" constant="12" id="blo-QY-E6E"/>
                             <constraint firstAttribute="trailing" secondItem="Xpj-GY-SgA" secondAttribute="trailing" id="c54-HW-KPq"/>
-                            <constraint firstItem="vCE-JH-ueh" firstAttribute="top" secondItem="nO4-fH-7C7" secondAttribute="bottom" constant="4" id="crx-87-70b"/>
                             <constraint firstItem="u0F-YI-Pq0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="dpd-73-ZRl"/>
-                            <constraint firstItem="Xpj-GY-SgA" firstAttribute="leading" secondItem="nO4-fH-7C7" secondAttribute="trailing" constant="8" id="f2t-vh-40N"/>
+                            <constraint firstItem="Xpj-GY-SgA" firstAttribute="leading" secondItem="r5V-UE-rVv" secondAttribute="trailing" constant="8" id="fTi-VZ-E5T"/>
                             <constraint firstAttribute="centerX" secondItem="xVh-Se-msN" secondAttribute="centerX" id="gxD-ap-0ED"/>
-                            <constraint firstItem="Xpj-GY-SgA" firstAttribute="leading" secondItem="vCE-JH-ueh" secondAttribute="trailing" constant="8" id="izm-Y5-1eh"/>
-                            <constraint firstItem="vCE-JH-ueh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="n5G-Pz-NoI"/>
-                            <constraint firstItem="nO4-fH-7C7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="n8B-Ye-f89"/>
+                            <constraint firstItem="r5V-UE-rVv" firstAttribute="top" secondItem="I5h-FP-9JD" secondAttribute="bottom" constant="4" id="oJa-Zg-8d4"/>
+                            <constraint firstItem="Xpj-GY-SgA" firstAttribute="leading" secondItem="I5h-FP-9JD" secondAttribute="trailing" constant="8" id="ojF-lb-q54"/>
+                            <constraint firstItem="r5V-UE-rVv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="qxA-bg-H08"/>
                             <constraint firstAttribute="centerX" secondItem="JKD-UQ-MJo" secondAttribute="centerX" id="uxk-iX-yHP"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="9rG-kU-ml8" secondAttribute="bottom" constant="14" id="vUe-7t-9Rx"/>
-                            <constraint firstItem="nO4-fH-7C7" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="xKH-VI-hYc"/>
                             <constraint firstAttribute="trailing" secondItem="9rG-kU-ml8" secondAttribute="trailing" id="z3F-FV-f1V"/>
                         </constraints>
                     </view>
@@ -391,8 +403,8 @@
                         <outlet property="fridgeStatusLabel" destination="hD0-O8-gf2" id="7PG-FC-Bty"/>
                         <outlet property="insertButtonLabel" destination="Wxi-UA-7Fg" id="Y9o-8r-Xqc"/>
                         <outlet property="myStatusLabel" destination="Ybe-yl-mTp" id="yfp-z1-2J2"/>
-                        <outlet property="nameLabel" destination="nO4-fH-7C7" id="Ewh-ZF-pAq"/>
-                        <outlet property="organizationLabel" destination="vCE-JH-ueh" id="IKR-nM-7bC"/>
+                        <outlet property="nameButton" destination="I5h-FP-9JD" id="tY5-nU-prZ"/>
+                        <outlet property="organizationButton" destination="r5V-UE-rVv" id="AJk-Ss-npr"/>
                         <outlet property="takeOutButtonLabel" destination="Xe2-bb-3Mf" id="Vft-pf-IXP"/>
                     </connections>
                 </viewController>

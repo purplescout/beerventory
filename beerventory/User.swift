@@ -45,8 +45,7 @@ class User {
   class func list(completionHandler: ([User]?, NSError?) -> (Void)) {
     let manager = BeerventorySessionManager.sharedInstance
     let orgId: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("organizationId")!
-    manager.GET("organizations/\(orgId)
-      /users", parameters: nil, success: { (datatask, response) -> Void in
+    manager.GET("organizations/\(orgId)/users", parameters: nil, success: { (datatask, response) -> Void in
       let responseObject = response as! NSDictionary
       var users = [User]()
       let userObjects = responseObject["users"] as! [NSDictionary]
