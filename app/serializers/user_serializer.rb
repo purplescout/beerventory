@@ -5,4 +5,8 @@ class UserSerializer < ActiveModel::Serializer
   def include_api_token?
     current_user == object
   end
+
+  def include_organizations?
+    !@options[:skip_organizations]
+  end
 end

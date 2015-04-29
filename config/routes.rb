@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     resource :history, only: [:show]
     resource :inventory, only: [:show, :update]
+    resources :users, only: [:index]
   end
 
   resources :beers, only: [:create, :show]

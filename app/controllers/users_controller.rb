@@ -26,6 +26,12 @@ class UsersController < ApplicationController
     render json: current_user
   end
 
+  def index
+    organization = Organization.find(params[:organization_id])
+
+    render json: organization.users, skip_organizations: true
+  end
+
   private
 
   def user_params
