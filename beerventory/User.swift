@@ -9,6 +9,18 @@
 import Foundation
 
 class User {
+  let id:Int
+  let name:String
+  let email:String
+  let beerAmount:Int
+
+  init(dict:NSDictionary) {
+    id = dict["id"] as! Int
+    name = dict["name"] as! String
+    email = dict["email"] as! String
+    beerAmount = dict["beer_amount"] as! Int
+  }
+
   class func login(email: String, password: String, completionHandler: (AnyObject?, NSError?) -> (Void)) {
     let manager = BeerventorySessionManager.sharedInstance
     let params = ["email":email, "password":password]
@@ -27,6 +39,26 @@ class User {
     }) { (datatask, error) -> Void in
       println("error: \(error)")
       completionHandler(nil, error)
+    }
+  }
+
+  class func list(completionHandler: ([User]?, NSError?) -> (Void)) {
+    let manager = BeerventorySessionManager.sharedInstance
+    let orgId: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("organizationId")!
+    manager.GET("organizations/\(orgId)
+      /users", parameters: nil, success: { (datatask, response) -> Void in
+      let responseObject = response as! NSDictionary
+      var users = [User]()
+      let userObjects = responseObject["users"] as! [NSDictionary]
+      for object in userObjects {
+        let user = User(dict:object)
+        users.append(user)
+      }
+      completionHandler(users, nil)
+
+      }) { (datatask, error) -> Void in
+        println("error: \(error)")
+        completionHandler(nil, error)
     }
   }
 }
