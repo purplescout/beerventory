@@ -25,7 +25,7 @@ Membership.blueprint do
 end
 
 Beer.blueprint do
-  barcode { "1234567" }
+  barcode { "1234567#{sn}" }
   name { "Samuel Adams Boston Lager" }
   volume { 0.355 }
 end

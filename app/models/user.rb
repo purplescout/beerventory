@@ -15,4 +15,10 @@ class User < ActiveRecord::Base
   before_validation do
     self.api_token = SecureRandom.base64(48) if password.present?
   end
+
+  def total_for_organization(organization)
+    all_in = History.where(user_id: id, organization_id: organization.id).sum(:in)
+    all_out = History.where(user_id: id, organization_id: organization.id).sum(:out)
+    all_in - all_out
+  end
 end

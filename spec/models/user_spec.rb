@@ -54,4 +54,28 @@ describe User do
       end
     end
   end
+
+  describe "#total_for_organization" do
+    let(:organization) { Organization.make! }
+    let(:user) { User.make!(organizations: [organization]) }
+    let(:beer1) { Beer.make! }
+    let(:beer2) { Beer.make! }
+
+    it "returns the total number of inserted beers minus total beers taken out" do
+      History.make!(user: user, organization: organization, beer: beer1, in: 10, out: 5)
+      History.make!(user: user, organization: organization, beer: beer2, in: 10, out: 1)
+
+      expect(user.total_for_organization(organization)).to eq(14)
+    end
+
+    it "can be negative" do
+      History.make!(user: user, organization: organization, beer: beer1, in: 3, out: 10)
+
+      expect(user.total_for_organization(organization)).to eq(-7)
+    end
+
+    it "is 0 if no transactions have been made" do
+      expect(user.total_for_organization(organization)).to eq(0)
+    end
+  end
 end

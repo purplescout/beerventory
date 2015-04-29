@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def index
     organization = Organization.find(params[:organization_id])
 
-    render json: organization.users, skip_organizations: true
+    render json: organization.users, skip_organizations: true, include_amount_for_organization: organization
   end
 
   private
