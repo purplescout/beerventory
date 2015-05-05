@@ -647,7 +647,7 @@
         <scene sceneID="bnT-Yj-DV8">
             <objects>
                 <tableViewController id="kYC-Cq-pI1" customClass="MyStatusTableViewController" customModule="beerventory" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="37" sectionHeaderHeight="22" sectionFooterHeight="22" id="afd-Pb-RvC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="afd-Pb-RvC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.49411764705882355" green="0.99215686274509807" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
@@ -690,28 +690,34 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="37" id="5nQ-pn-2Gg" customClass="HistoryBeerCell" customModule="beerventory" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="70" id="5nQ-pn-2Gg" customClass="HistoryBeerCell" customModule="beerventory" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5nQ-pn-2Gg" id="Su5-e1-M2Z">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWD-Qv-kgP">
-                                            <rect key="frame" x="541" y="8" width="51" height="21"/>
+                                            <rect key="frame" x="535" y="8" width="57" height="54"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="57" id="QG9-B8-YWM"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Staropramen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0z-AT-2AH">
-                                            <rect key="frame" x="65" y="8" width="476" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Staropramen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T0z-AT-2AH">
+                                            <rect key="frame" x="65" y="8" width="470" height="54"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="nVA-wL-QJX"/>
+                                                <constraint firstAttribute="height" constant="54" id="nVA-wL-QJX"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mH-EY-sog">
-                                            <rect key="frame" x="8" y="8" width="57" height="21"/>
+                                            <rect key="frame" x="8" y="8" width="57" height="54"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="57" id="3wn-kH-faS"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -781,8 +787,8 @@
                                                 <constraint firstAttribute="width" constant="49" id="pQP-2L-NrT"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bCI-KY-3YM">
-                                            <rect key="frame" x="101" y="39" width="491" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bCI-KY-3YM">
+                                            <rect key="frame" x="95" y="22" width="497" height="55"/>
                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                             <color key="textColor" red="0.19215686269999999" green="0.18823529410000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -791,11 +797,11 @@
                                     <color key="backgroundColor" red="0.63137254899999995" green="0.90588235289999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="tmT-DW-S70" firstAttribute="top" secondItem="dyr-an-4YA" secondAttribute="topMargin" constant="14" id="Msc-Nl-H84"/>
-                                        <constraint firstItem="bCI-KY-3YM" firstAttribute="leading" secondItem="tmT-DW-S70" secondAttribute="trailing" constant="24" id="Sdf-W7-pGX"/>
+                                        <constraint firstItem="bCI-KY-3YM" firstAttribute="leading" secondItem="tmT-DW-S70" secondAttribute="trailing" constant="18" id="Sdf-W7-pGX"/>
                                         <constraint firstItem="bCI-KY-3YM" firstAttribute="trailing" secondItem="dyr-an-4YA" secondAttribute="trailingMargin" id="Vql-2g-Tyo"/>
-                                        <constraint firstItem="bCI-KY-3YM" firstAttribute="top" secondItem="dyr-an-4YA" secondAttribute="topMargin" constant="31" id="VsX-wx-r9x"/>
+                                        <constraint firstItem="bCI-KY-3YM" firstAttribute="top" secondItem="dyr-an-4YA" secondAttribute="topMargin" constant="14" id="VsX-wx-r9x"/>
                                         <constraint firstItem="tmT-DW-S70" firstAttribute="leading" secondItem="dyr-an-4YA" secondAttribute="leadingMargin" constant="20" id="hAr-GN-i3d"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bCI-KY-3YM" secondAttribute="bottom" constant="32" id="xhY-ZK-nRs"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bCI-KY-3YM" secondAttribute="bottom" constant="15" id="xhY-ZK-nRs"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

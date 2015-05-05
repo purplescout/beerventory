@@ -25,7 +25,7 @@ class Inventory {
     beerString.appendAttributedString(NSMutableAttributedString(string:beer.name, attributes:attrBeer))
 
     var attrVolume = [NSFontAttributeName : UIFont(name: "ArialRoundedMTBold", size: 14.0)!]
-    var volumeString = NSMutableAttributedString(string:" (\(Int(beer.volume*1000)) ml)", attributes:attrVolume)
+    var volumeString = NSMutableAttributedString(string:" (\(Int(beer.volume*1000))\u{a0}ml)", attributes:attrVolume)
     beerString.appendAttributedString(volumeString)
 
     return beerString
