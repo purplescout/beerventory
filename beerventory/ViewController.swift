@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIActionSheetDelegate {
   @IBOutlet weak var myStatusLabel: UILabel!
   @IBOutlet weak var fridgeStatusLabel: UILabel!
   @IBOutlet weak var allUserStatusLabel: UILabel!
@@ -17,29 +17,20 @@ class ViewController: UIViewController {
   @IBOutlet weak var nameButton: UIButton!
   @IBOutlet weak var organizationButton: UIButton!
 
-  @IBAction func showOrganizationSwitcher(sender: AnyObject) {
-    
-  }
+
   @IBAction func showUserOptions(sender: AnyObject) {
+    let sheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: "Log out")
+    sheet.showInView(self.view)
   }
-  @IBAction func showMyStatus(sender: AnyObject) {
-  }
-
-  @IBAction func showFridgeStatus(sender: AnyObject) {
-  }
-
-  @IBAction func showAllUserStatus(sender: AnyObject) {
-  }
-
-  @IBAction func showTakeOut(sender: AnyObject) {
-  }
-
-  @IBAction func showInsert(sender: AnyObject) {
-  }
-
 
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+
+  func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+    if buttonIndex == actionSheet.destructiveButtonIndex {
+      //TODO log out
+    }
   }
 
   override func viewDidAppear(animated: Bool) {

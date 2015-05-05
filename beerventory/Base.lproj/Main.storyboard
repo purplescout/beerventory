@@ -173,7 +173,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="showMyStatus:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZbZ-hr-2dA"/>
                                             <segue destination="jwi-1n-LO9" kind="presentation" id="AAb-LC-Zjc"/>
                                         </connections>
                                     </button>
@@ -210,7 +209,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="showAllUserStatus:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cVs-Hl-Hll"/>
                                             <segue destination="Kv7-KE-DW2" kind="presentation" id="gox-8f-G5P"/>
                                         </connections>
                                     </button>
@@ -246,7 +244,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="showFridgeStatus:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jvp-IC-Fv4"/>
                                             <segue destination="s9G-2Y-DhW" kind="presentation" id="UU1-la-oJT"/>
                                         </connections>
                                     </button>
@@ -282,7 +279,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="showTakeOut:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dgg-pY-pFg"/>
                                             <segue destination="bes-6E-FiN" kind="presentation" id="FRf-ta-P4I"/>
                                         </connections>
                                     </button>
@@ -318,7 +314,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="showInsert:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="63K-WA-1Wn"/>
                                             <segue destination="pDv-r3-ZJ1" kind="presentation" id="dSb-Ns-1Qi"/>
                                         </connections>
                                     </button>
@@ -373,7 +368,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showOrganizationSwitcher:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0d5-ud-YUl"/>
+                                    <segue destination="2ie-CD-3d0" kind="presentation" id="YkE-qh-75P"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -931,6 +926,41 @@
             </objects>
             <point key="canvasLocation" x="2506" y="1783"/>
         </scene>
+        <!--Switch organization-->
+        <scene sceneID="kJh-r6-RqY">
+            <objects>
+                <tableViewController id="0Uu-ia-VaY" customClass="SwitchOrganizationViewController" customModule="beerventory" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="d43-hh-7Sv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="organizationCell" id="2Dx-4v-6Sr">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Dx-4v-6Sr" id="ZoB-ad-HZd">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="tintColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0Uu-ia-VaY" id="aHK-Ji-wHu"/>
+                            <outlet property="delegate" destination="0Uu-ia-VaY" id="xOU-06-Bkf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Switch organization" id="jeU-Jz-bni">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="KVu-rI-t8Z">
+                            <color key="tintColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancel:" destination="0Uu-ia-VaY" id="IpA-p4-8dF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pRk-xU-doV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2199" y="-352"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="szE-Gp-v7t">
             <objects>
@@ -1111,6 +1141,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Sg-WG-Gw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-37" y="2576"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Kja-Br-wgf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2ie-CD-3d0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uH3-GC-pMJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Uu-ia-VaY" kind="relationship" relationship="rootViewController" id="mCw-wq-hvT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YNV-Zc-agq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1387" y="-352"/>
         </scene>
     </scenes>
     <resources>

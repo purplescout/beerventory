@@ -13,6 +13,8 @@
 		4C6DFCA71AD95D2F0044D58D /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6DFCA61AD95D2F0044D58D /* Beer.swift */; };
 		4C6DFCA91ADD7A000044D58D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6DFCA81ADD7A000044D58D /* History.swift */; };
 		4C6DFCAB1AE94E1D0044D58D /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6DFCAA1AE94E1D0044D58D /* Inventory.swift */; };
+		4C8BC6C11AF931F40049A78B /* SwitchOrganizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BC6C01AF931F40049A78B /* SwitchOrganizationViewController.swift */; };
+		4C8BC6C31AF935DB0049A78B /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BC6C21AF935DB0049A78B /* Organization.swift */; };
 		4CA51D8B1AC6F4ED00581E2A /* MyStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA51D8A1AC6F4ED00581E2A /* MyStatusTableViewController.swift */; };
 		4CA51D8D1AC6F6AA00581E2A /* HistoryBeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA51D8C1AC6F6AA00581E2A /* HistoryBeerCell.swift */; };
 		4CB7FF761A7823BA002CA3AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7FF751A7823BA002CA3AF /* LoginViewController.swift */; };
@@ -53,6 +55,8 @@
 		4C6DFCA61AD95D2F0044D58D /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		4C6DFCA81ADD7A000044D58D /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		4C6DFCAA1AE94E1D0044D58D /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		4C8BC6C01AF931F40049A78B /* SwitchOrganizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchOrganizationViewController.swift; sourceTree = "<group>"; };
+		4C8BC6C21AF935DB0049A78B /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		4CA51D8A1AC6F4ED00581E2A /* MyStatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStatusTableViewController.swift; sourceTree = "<group>"; };
 		4CA51D8C1AC6F6AA00581E2A /* HistoryBeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryBeerCell.swift; sourceTree = "<group>"; };
 		4CB7FF751A7823BA002CA3AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				4CD3D8BF1A6C161900E05669 /* Supporting Files */,
 				4CE978F91A9BA2F100F6F4FF /* beerventory-Bridging-Header.h */,
 				4CE978FC1A9BA43A00F6F4FF /* User.swift */,
+				4C8BC6C21AF935DB0049A78B /* Organization.swift */,
 				4C6DFCA61AD95D2F0044D58D /* Beer.swift */,
 				4C6DFCAA1AE94E1D0044D58D /* Inventory.swift */,
 				4CE978FE1A9BA4A500F6F4FF /* BeerventorySessionManager.swift */,
@@ -163,6 +168,7 @@
 				4C6DFCA81ADD7A000044D58D /* History.swift */,
 				4CA51D8C1AC6F6AA00581E2A /* HistoryBeerCell.swift */,
 				4C1A827E1AC708A00015E287 /* TakeOutViewController.swift */,
+				4C8BC6C01AF931F40049A78B /* SwitchOrganizationViewController.swift */,
 				4CBE945E1ACAFDED00C1AEF0 /* InsertViewController.swift */,
 				4C6DFCA41AD9593F0044D58D /* AddNewBeerController.swift */,
 				4CBE94601ACB056100C1AEF0 /* BeerScanner.swift */,
@@ -333,11 +339,13 @@
 			files = (
 				4C1A827F1AC708A00015E287 /* TakeOutViewController.swift in Sources */,
 				4C6DFCA71AD95D2F0044D58D /* Beer.swift in Sources */,
+				4C8BC6C31AF935DB0049A78B /* Organization.swift in Sources */,
 				4C6DFCA91ADD7A000044D58D /* History.swift in Sources */,
 				4CA51D8D1AC6F6AA00581E2A /* HistoryBeerCell.swift in Sources */,
 				4CBE94631ACB0D2D00C1AEF0 /* InsertBeerCell.swift in Sources */,
 				4CBC29DA1AB5E6C2001573C0 /* UserTableViewController.swift in Sources */,
 				4CB7FF761A7823BA002CA3AF /* LoginViewController.swift in Sources */,
+				4C8BC6C11AF931F40049A78B /* SwitchOrganizationViewController.swift in Sources */,
 				4CD3D8C71A6C161900E05669 /* ViewController.swift in Sources */,
 				4CD3D8C21A6C161900E05669 /* AppDelegate.swift in Sources */,
 				4CE978FD1A9BA43A00F6F4FF /* User.swift in Sources */,
