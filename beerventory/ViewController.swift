@@ -29,12 +29,22 @@ class ViewController: UIViewController, UIActionSheetDelegate {
 
   func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
     if buttonIndex == actionSheet.destructiveButtonIndex {
-      //TODO log out
+      User.logout()
+      presentLoginIfNeeded()
     }
   }
 
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+    presentLoginIfNeeded()
+  }
+
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+
+  func presentLoginIfNeeded() {
     if (NSUserDefaults.standardUserDefaults().objectForKey("userId") == nil) {
       if let loginViewController: UIViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? UIViewController {
         presentViewController(loginViewController, animated: false, completion: nil)
@@ -43,11 +53,6 @@ class ViewController: UIViewController, UIActionSheetDelegate {
       organizationButton.setTitle(NSUserDefaults.standardUserDefaults().objectForKey("organizationName") as? String, forState: .Normal)
       nameButton.setTitle(NSUserDefaults.standardUserDefaults().objectForKey("userName") as? String, forState: .Normal)
     }
-  }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
 
 

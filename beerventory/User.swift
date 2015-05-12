@@ -42,6 +42,14 @@ class User {
     }
   }
 
+  class func logout() {
+    NSUserDefaults.standardUserDefaults().removeObjectForKey("userId")
+    NSUserDefaults.standardUserDefaults().removeObjectForKey("userName")
+    NSUserDefaults.standardUserDefaults().removeObjectForKey("apiToken")
+    NSUserDefaults.standardUserDefaults().removeObjectForKey("organizationId")
+    NSUserDefaults.standardUserDefaults().removeObjectForKey("organizationName")
+  }
+
   class func list(completionHandler: ([User]?, NSError?) -> (Void)) {
     let manager = BeerventorySessionManager.sharedInstance
     let orgId: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("organizationId")!
