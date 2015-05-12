@@ -27,6 +27,16 @@ class ViewController: UIViewController, UIActionSheetDelegate {
     super.viewDidLoad()
   }
 
+  func getNumString(num: NSNumber) -> String {
+    if num.integerValue > 0 {
+      return "+\(num)"
+    } else if num.integerValue < 0 {
+      return "-\(num)"
+    } else {
+      return "0"
+    }
+  }
+
   func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
     if buttonIndex == actionSheet.destructiveButtonIndex {
       User.logout()
@@ -37,6 +47,14 @@ class ViewController: UIViewController, UIActionSheetDelegate {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     presentLoginIfNeeded()
+    Organization.refresh { (response, error) -> (Void) in
+      let responseObject = response!["organization"] as! NSDictionary
+      self.myStatusLabel.text = self.getNumString(responseObject.objectForKey("user_amount") as! NSNumber)
+      let fridgeStatus = responseObject.objectForKey("fridge_amount") as! NSNumber
+      self.fridgeStatusLabel.text = "\(fridgeStatus)"
+      let userStatus = responseObject.objectForKey("no_users") as! NSNumber
+      self.allUserStatusLabel.text = "\(userStatus)"
+    }
   }
 
   override func didReceiveMemoryWarning() {

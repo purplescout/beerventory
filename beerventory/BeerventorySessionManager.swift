@@ -16,7 +16,6 @@ class BeerventorySessionManager: AFHTTPSessionManager {
     Static.instance.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept")
 
     if let token = NSUserDefaults.standardUserDefaults().stringForKey("apiToken") {
-      println("token: \(token)")
       Static.instance.requestSerializer.setValue(token, forHTTPHeaderField: "X-Beerventory-Token")
     }
     

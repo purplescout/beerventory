@@ -35,4 +35,18 @@ class Organization {
         completionHandler(nil, error)
     }
   }
+
+  class func refresh(completionHandler: (NSDictionary?, NSError?) -> (Void)) {
+    let manager = BeerventorySessionManager.sharedInstance
+    let orgId: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("organizationId")!
+    manager.GET("organizations/\(orgId)/", parameters: nil, success: { (datatask, response) -> Void in
+      let responseObject = response as! NSDictionary
+
+      completionHandler(responseObject, nil)
+
+      }) { (datatask, error) -> Void in
+        println("error: \(error)")
+        completionHandler(nil, error)
+    }
+  }
 }
