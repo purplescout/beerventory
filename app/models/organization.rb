@@ -4,4 +4,16 @@ class Organization < ActiveRecord::Base
 
   validates :name, presence: true
   validates :code, presence: true, uniqueness: true
+
+  def no_users
+    users.count
+  end
+
+  def fridge_amount
+    Inventory.where(organization_id: id).sum(:amount)
+  end
+
+  def user_amount(user)
+    user.total_for_organization(self)
+  end
 end
