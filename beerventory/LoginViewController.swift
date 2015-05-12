@@ -36,8 +36,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     } else if textField == passwordTextField {
       if signUpMode {
         nameTextField.becomeFirstResponder()
-      } else {
-        //login
+      } else { //login
         if emailTextField.text.isEmpty {
           emailTextField.becomeFirstResponder()
         } else if passwordTextField.text.isEmpty {
@@ -61,7 +60,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       } else if invitationCodeTextField.text.isEmpty {
         invitationCodeTextField.becomeFirstResponder()
       } else {
-        //signup
+        //TODO signup
         dismissViewControllerAnimated(true, completion: nil)
       }
     }

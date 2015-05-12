@@ -38,10 +38,10 @@ class TakeOutViewController: UIViewController {
   }
 
   func findBeer(ean: String) {
-    //alse check if beer in fridge
+    //TODO alse check if beer in fridge
     Beer.find(ean, completionHandler: { (beer, error) -> (Void) in
       if beer == nil {
-        //beer not in system
+        //TODO beer not in system
       } else {
 
         self.beer = beer!
