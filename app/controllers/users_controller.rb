@@ -8,16 +8,32 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save
-      auto_login(@user)
-      respond_to do |format|
-        format.html { redirect_to :organizations }
-        format.json { render json: @user }
+    respond_to do |format|
+      format.html do
+        if @user.save
+          auto_login(@user)
+          redirect_to :organizations
+        else
+          render :new
+        end
       end
-    else
-      respond_to do |format|
-        format.html { render :new }
-        format.json { render json: { errors: @user.errors }, status: :unprocessable_entity }
+      format.json do
+        organization = Organization.where(code: params[:invitation_code]).first
+        membership = Membership.new(organization: organization, user: @user, role: "member")
+
+        User.transaction do
+          if @user.save
+            if membership.save
+              auto_login(@user)
+              render json: @user
+            else
+              render json: { errors: membership.errors }, status: :unprocessable_entity
+              raise ActiveRecord::Rollback
+            end
+          else
+            render json: { errors: @user.errors }, status: :unprocessable_entity
+          end
+        end
       end
     end
   end
@@ -35,6 +51,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :name)
   end
 end
