@@ -60,8 +60,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       } else if invitationCodeTextField.text.isEmpty {
         invitationCodeTextField.becomeFirstResponder()
       } else {
-        //TODO signup
-        dismissViewControllerAnimated(true, completion: nil)
+        User.signup(emailTextField.text, password: passwordTextField.text, name: nameTextField.text, invitationCode: invitationCodeTextField.text, completionHandler: { (result, error) -> (Void) in
+          self.dismissViewControllerAnimated(true, completion: nil)
+        })
+        //TODO handle error
       }
     }
     return true

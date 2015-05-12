@@ -21,20 +21,24 @@ class User {
     beerAmount = dict["beer_amount"] as! Int
   }
 
+  class func signup(email: String, password: String, name: String, invitationCode: String, completionHandler: (AnyObject?, NSError?) -> (Void)) {
+    let manager = BeerventorySessionManager.sharedInstance
+    let params = ["user":["email":email, "password":password, "password_confirmation":password, "name":name], "invitation_code":invitationCode]
+    manager.POST("users", parameters: params, success: { (datatask, response) -> Void in
+            self.setUserDefaults(response)
+      completionHandler(response, nil)
+      }) { (datatask, error) -> Void in
+        println("error: \(error)")
+        completionHandler(nil, error)
+    }
+  }
+
   class func login(email: String, password: String, completionHandler: (AnyObject?, NSError?) -> (Void)) {
     let manager = BeerventorySessionManager.sharedInstance
     let params = ["email":email, "password":password]
     manager.POST("session", parameters: params, success: { (datatask, response) -> Void in
-      println("response: \(response)")
-      let responseObject = response as! NSDictionary
-      let userObject = responseObject["user"] as! NSDictionary
+      self.setUserDefaults(response)
 
-      NSUserDefaults.standardUserDefaults().setObject(userObject["id"], forKey: "userId")
-      NSUserDefaults.standardUserDefaults().setObject(userObject["name"], forKey: "userName")
-      NSUserDefaults.standardUserDefaults().setObject(userObject["api_token"], forKey: "apiToken")
-      let organizations = userObject["organizations"] as! NSArray
-      NSUserDefaults.standardUserDefaults().setObject(organizations[0]["id"], forKey: "organizationId")
-      NSUserDefaults.standardUserDefaults().setObject(organizations[0]["name"], forKey: "organizationName")
       completionHandler(response, nil)
     }) { (datatask, error) -> Void in
       println("error: \(error)")
@@ -67,5 +71,18 @@ class User {
         println("error: \(error)")
         completionHandler(nil, error)
     }
+  }
+
+  class func setUserDefaults(response: AnyObject) {
+    let responseObject = response as! NSDictionary
+    let userObject = responseObject["user"] as! NSDictionary
+
+    let organizations = userObject["organizations"] as! NSArray
+
+    NSUserDefaults.standardUserDefaults().setObject(userObject["id"], forKey: "userId")
+    NSUserDefaults.standardUserDefaults().setObject(userObject["name"], forKey: "userName")
+    NSUserDefaults.standardUserDefaults().setObject(userObject["api_token"], forKey: "apiToken")
+    NSUserDefaults.standardUserDefaults().setObject(organizations[0]["id"], forKey: "organizationId")
+    NSUserDefaults.standardUserDefaults().setObject(organizations[0]["name"], forKey: "organizationName")
   }
 }
