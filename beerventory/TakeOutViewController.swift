@@ -24,11 +24,15 @@ class TakeOutViewController: UIViewController {
     dismissViewControllerAnimated(true, completion: nil)
   }
   @IBAction func ok(sender: AnyObject) {
-    beer!.amount = -1
-    Inventory.update([beer!], completionHandler: { (error) -> (Void) in
-      //TODO handle error
+    if beer == nil {
       self.dismissViewControllerAnimated(true, completion: nil)
-    })
+    } else {
+      beer!.amount = -1
+      Inventory.update([beer!], completionHandler: { (error) -> (Void) in
+        //TODO handle error
+        self.dismissViewControllerAnimated(true, completion: nil)
+      })
+    }
   }
 
   override func viewDidLoad() {
@@ -41,12 +45,14 @@ class TakeOutViewController: UIViewController {
     //TODO also check if beer in fridge
     Beer.find(ean, completionHandler: { (beer, error) -> (Void) in
       if beer == nil {
-        //TODO beer not in system
+        self.messageLabel.text = "We don't recognize this beer..."
+        self.beerLabel.text = "sure it's a beer?"
+        self.okButton.setTitle("I'll drink it!", forState: .Normal)
       } else {
         self.beer = beer!
         self.messageLabel.text = "Enjoy your"
         self.beerLabel.attributedText = beer!.attributedName(false)
-        self.okButton.titleLabel?.text = "I will!"
+        self.okButton.setTitle("I will!", forState: .Normal)
       }
     })
   }
