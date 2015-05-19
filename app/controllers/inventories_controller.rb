@@ -1,6 +1,6 @@
 class InventoriesController < ApplicationController
   def show
-    inventories = Inventory.where(organization: params[:organization_id]).all
+    inventories = Inventory.where(organization: params[:organization_id]).where("amount > 0").all
 
     render json: inventories
   end

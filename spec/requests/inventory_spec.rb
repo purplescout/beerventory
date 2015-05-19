@@ -25,13 +25,10 @@ describe "Inventory API" do
 
       expect(response).to be_success
       json = JSON.parse(response.body)
-      expect(json["inventories"].length).to eq 2
+      expect(json["inventories"].length).to eq 1
 
       expect(json["inventories"][0]["beer"]["name"]).to eq "Pripps Blå"
       expect(json["inventories"][0]["amount"]).to eq 10
-
-      expect(json["inventories"][1]["beer"]["name"]).to eq "Mythos"
-      expect(json["inventories"][1]["amount"]).to eq 0
     end
   end
 
