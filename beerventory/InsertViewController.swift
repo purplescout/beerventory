@@ -97,8 +97,12 @@ class InsertViewController: UITableViewController, UITableViewDataSource {
 
   @IBAction func sendBeers(sender: AnyObject) {
     Inventory.update(beers, completionHandler: { (error) -> (Void) in
-      //TODO handle errors
-      self.dismissViewControllerAnimated(true, completion: nil)
+      if error == nil {
+        self.dismissViewControllerAnimated(true, completion: nil)
+      } else {
+        let alert = UIAlertView(title: "Error", message: "Couldn't send, please try again in a while", delegate: nil, cancelButtonTitle: "ok")
+        alert.show()
+      }
     })
   }
 

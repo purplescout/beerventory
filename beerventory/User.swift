@@ -38,7 +38,6 @@ class User {
     let params = ["email":email, "password":password]
     manager.POST("session", parameters: params, success: { (datatask, response) -> Void in
       self.setUserDefaults(response)
-
       completionHandler(response, nil)
     }) { (datatask, error) -> Void in
       println("error: \(error)")

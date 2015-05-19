@@ -43,8 +43,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
           passwordTextField.becomeFirstResponder()
         } else {
           User.login(emailTextField.text, password: passwordTextField.text) { response,error in
-            self.dismissViewControllerAnimated(true, completion: nil)
-            //TODO handle error
+            if error == nil {
+              self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+              let alert = UIAlertView(title: "Failure", message: "Wrong credentials, please try again", delegate: nil, cancelButtonTitle: "ok")
+              alert.show()
+              self.passwordTextField.text = ""
+            }
           }
         }
       }
@@ -61,9 +66,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         invitationCodeTextField.becomeFirstResponder()
       } else {
         User.signup(emailTextField.text, password: passwordTextField.text, name: nameTextField.text, invitationCode: invitationCodeTextField.text, completionHandler: { (result, error) -> (Void) in
-          self.dismissViewControllerAnimated(true, completion: nil)
+          if error == nil {
+            self.dismissViewControllerAnimated(true, completion: nil)
+          } else {
+            let alert = UIAlertView(title: "Failure", message: "Something went wrong, please try again", delegate: nil, cancelButtonTitle: "ok")
+            alert.show()
+          }
         })
-        //TODO handle error
       }
     }
     return true

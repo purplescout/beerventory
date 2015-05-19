@@ -18,10 +18,14 @@ class SwitchOrganizationViewController: UITableViewController, UITableViewDataSo
 
   override func viewDidLoad() {
     Organization.list { (organizations, error) -> (Void) in
-      self.organizations = organizations!
-      self.tableView.reloadData()
+      if error == nil {
+        self.organizations = organizations!
+        self.tableView.reloadData()
+      } else {
+        let alert = UIAlertView(title: "Error", message: "Couldn't fetch, please try again in a while", delegate: nil, cancelButtonTitle: "ok")
+        alert.show()
+      }
     }
-    //TODO hantera error
   }
 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

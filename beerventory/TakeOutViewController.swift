@@ -23,14 +23,19 @@ class TakeOutViewController: UIViewController {
   @IBAction func cancel(sender: AnyObject) {
     dismissViewControllerAnimated(true, completion: nil)
   }
+  
   @IBAction func ok(sender: AnyObject) {
     if beer == nil {
       self.dismissViewControllerAnimated(true, completion: nil)
     } else {
       beer!.amount = -1
       Inventory.update([beer!], completionHandler: { (error) -> (Void) in
-        //TODO handle error
-        self.dismissViewControllerAnimated(true, completion: nil)
+        if error == nil {
+          self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+          let alert = UIAlertView(title: "Error", message: "Couldn't send, please try again in a while", delegate: nil, cancelButtonTitle: "ok")
+          alert.show()
+        }
       })
     }
   }

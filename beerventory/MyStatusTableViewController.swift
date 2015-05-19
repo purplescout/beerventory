@@ -17,12 +17,16 @@ class MyStatusTableViewController: UITableViewController, UITableViewDataSource 
 
   override func viewDidLoad() {
     History.list { (history, error) -> (Void) in
-      self.histories = history!
-      self.totalInLabel.text = "+\(History.totalIn)"
-      self.totalOutLabel.text = "-\(History.totalOut)"
-      self.tableView.reloadData()
+      if error == nil {
+        self.histories = history!
+        self.totalInLabel.text = "+\(History.totalIn)"
+        self.totalOutLabel.text = "-\(History.totalOut)"
+        self.tableView.reloadData()
+      } else {
+        let alert = UIAlertView(title: "Error", message: "Couldn't fetch, please try again in a while", delegate: nil, cancelButtonTitle: "ok")
+        alert.show()
+      }
     }
-//TODO hantera error
   }
 
   
