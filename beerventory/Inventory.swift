@@ -50,6 +50,18 @@ class Inventory {
     }
   }
 
+  class func exists(beer: Beer, completionHandler: (Bool) -> (Void)) {
+    self.list { (inventory, error) -> (Void) in
+      for beerInFridge in inventory! {
+        if beerInFridge.beer.id == beer.id {
+          completionHandler(true)
+          return
+        }
+      }
+      completionHandler(false)
+    }
+  }
+
   class func update(inventoryDiff: [Beer], completionHandler: (NSError?) -> (Void)) {
     var dict = Dictionary<String, Array<Dictionary<String, String>>>()
     dict["beers"] = [Dictionary]()

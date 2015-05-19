@@ -42,17 +42,25 @@ class TakeOutViewController: UIViewController {
   }
 
   func findBeer(ean: String) {
-    //TODO also check if beer in fridge
+
     Beer.find(ean, completionHandler: { (beer, error) -> (Void) in
       if beer == nil {
         self.messageLabel.text = "We don't recognize this beer..."
         self.beerLabel.text = "sure it's a beer?"
         self.okButton.setTitle("I'll drink it!", forState: .Normal)
       } else {
-        self.beer = beer!
-        self.messageLabel.text = "Enjoy your"
-        self.beerLabel.attributedText = beer!.attributedName(false)
-        self.okButton.setTitle("I will!", forState: .Normal)
+        Inventory.exists(beer!, completionHandler: { (exists) -> (Void) in
+          if exists {
+            self.beer = beer!
+            self.messageLabel.text = "Enjoy your"
+            self.beerLabel.attributedText = beer!.attributedName(false)
+            self.okButton.setTitle("I will!", forState: .Normal)
+          } else {
+            self.messageLabel.text = "This is not stashed in the fridge by anyone"
+            self.beerLabel.text = "possibly not up for grabs"
+            self.okButton.setTitle("I'll risk it", forState: .Normal)
+          }
+        })
       }
     })
   }
