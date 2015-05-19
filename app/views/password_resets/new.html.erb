@@ -1,0 +1,10 @@
+<h1>Reset password</h1>
+
+<%= form_for :password_reset, url: password_resets_path do |form| %>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <%= form.submit "Send password reset instructions" %>
+<% end %>
